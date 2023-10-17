@@ -10,6 +10,7 @@
     "@theme-toggles/react": "^4.1.0",
     "aos": "^2.3.4",
     "graphql": "^16.8.1",
+    "local-storage-fallback": "^4.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",

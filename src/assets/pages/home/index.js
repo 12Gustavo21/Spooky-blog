@@ -27,15 +27,17 @@ export default function Home() {
         <>
             <Layout>
                 <S.Main>
-                    <div>
-                        <span>Hi, 👋</span>
+                    <S.ContentWrapper>
+                        <span>Hi 👋,</span>
                         <span>My name is </span>
-                        <span>Gustavo Almeida</span>
+                        <span className='gradient'>Gustavo Almeida</span>
                         <span>I'm a Front-end developer</span>
-                    </div>
-                    <div>
-                        <img src={home.profilePhoto.url} alt="Profile" width={100}/>
-                    </div>
+                    </S.ContentWrapper>
+                    <S.ProfilePhotoWrapper>
+                        <S.Border>
+                            <img src={home.profilePhoto.url} alt="Profile" draggable="false" />
+                        </S.Border>
+                    </S.ProfilePhotoWrapper>
                 </S.Main>
             </Layout>
         </>

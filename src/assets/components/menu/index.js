@@ -10,18 +10,20 @@ const StyledBurger = styled.section`
     width: 2rem;
     height: 2rem;
     z-index: 20;
-    padding-right: 3rem;
+    padding: 0 0rem 0.5rem 1rem;
     display: none;
 
     @media (width <= 768px) {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        gap: ${({ open }) => open ? '.5rem' : '.3rem'};
         flex-flow: column nowrap;
     }
+
     section {
         width: 2rem;
         height: 0.25rem;
-        background-color: ${({ open }) => open ? '#ccc' : '#333'};
+        background-color: ${({ open }) => open ? '#ccc' : '#666'};
         border-radius: 0.625rem;
         transform-origin: 0.0625rem;
         transition: all 0.3s linear;

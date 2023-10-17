@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 //Components
 import NavBar from '../navBar';
-import { Theme } from '../theme';
 import Menu from '../menu';
+import Switch from '../switch';
 
 //Image
 import Logo from '../../img/logo.png';
@@ -16,18 +16,10 @@ import { FaGithub } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { BsLinkedin } from 'react-icons/bs';
 
-//Theme toggle
-import "@theme-toggles/react/css/Classic.css";
-import { Classic } from "@theme-toggles/react";
-
 //Styles
 import * as S from './style';
 
 export default function Header() {
-
-    const [theme, toggleTheme] = Theme();
-    console.log(theme);
-
     const [scroll, setScroll] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -48,8 +40,7 @@ export default function Header() {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-
+        window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -57,8 +48,7 @@ export default function Header() {
 
     return (
         <>
-            <S.Header showMenu={scroll === 'up'}
-                hiddenMenu={scroll === 'down'}>
+            <S.Header scroll={scroll}>
                 <S.Container>
                     <S.LogoBox>
                         <Link to="/">
@@ -73,12 +63,12 @@ export default function Header() {
                         <FaInstagram size={30} />
                         <BsLinkedin size={30} />
                     </S.Icons>
+                    <S.ToggleBox>
+                        <Switch />
+                    </S.ToggleBox>
                     <S.MenuBox>
                         <Menu />
                     </S.MenuBox>
-                    <div>
-                        <Classic duration={750} style={{ fontSize: 40 }} theme={theme} onToggle={toggleTheme} />
-                    </div>
                 </S.Container>
             </S.Header>
         </>

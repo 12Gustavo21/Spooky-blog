@@ -26,12 +26,13 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-    font: bold 1.5rem/2rem "DM Sans", sans-serif;
+    font: bold 1.25rem/2rem "DM Sans", sans-serif;
+    color: #666;
 
     &::after {
         content: "";
         display: block;
-        border-bottom: .15rem solid #010101;
+        border-bottom: .15rem solid #666;
         transform: scaleX(0);
         transition: transform 250ms ease-in-out;
     }
@@ -41,7 +42,7 @@ export const Item = styled.li`
         transform-origin: center;
     }
 
-    @media only screen and (width <= 900px) {
-        font-size: 1.2rem;
+    @media only screen and (width <= 950px) {
+        font-size: 1.1rem;
     }
 `;

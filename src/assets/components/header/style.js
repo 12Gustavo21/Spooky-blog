@@ -2,15 +2,16 @@ import styled from "styled-components";
 
 export const Header = styled.header`
     width: 100%;
-    height: ${props => props.showMenu ? '10vh' : '20vh'};
-    box-shadow: ${props => props.showMenu ? '0 8px 32px 0 rgba(31, 38, 135, 0.37 )' : 'none'};
-    transform: ${props => props.hiddenMenu ? 'translateY(-100%)' : 'translateY(0)'};
+    height: ${({ scroll }) => (scroll ? '10vh' : '20vh')};
+    box-shadow: ${({ scroll }) => (scroll ? '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )' : 'none')};
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 999;
     transition: all 0.3s ease-in-out;
-`;  
+`;
 
 export const Container = styled.section`
     width: 100%;
@@ -35,8 +36,14 @@ export const LogoBox = styled.figure`
         width: 8rem;
         height: 8rem;
         object-fit: contain;
+        transition: all 0.3s ease-in-out;
 
-        @media only screen and (width <= 900px) {
+        &:hover {
+            transform: scale(1.1);
+            filter: brightness(0.5);
+        }
+
+        @media only screen and (width <= 1024px) {
             width: 6rem;
             height: 6rem;
         }
@@ -50,10 +57,6 @@ export const NavBox = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media only screen and (width <= 900px) {
-        width: 60%;
-    }
-
     @media only screen and (width <= 768px) {
         display: none;
     }
@@ -65,8 +68,19 @@ export const Icons = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    
+    svg {
+        fill: #666;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
 
-    @media only screen and (width <= 900px) {
+        &:hover {
+            fill: #42446E;
+            transform: scale(1.2);
+        }
+    }
+
+    @media only screen and (width <= 950px) {
         width: 20%;
     }
 
@@ -76,13 +90,30 @@ export const Icons = styled.div`
 `;
 
 export const MenuBox = styled.div`
-    width: 60%;
+    width: 20%;
     height: 100%;
     display: none;
-    justify-content: flex-end;
-    align-items: center;
-
+    justify-content: center;
+    align-items: center;   
+    
     @media only screen and (width <= 768px) {
         display: flex;
+    }
+`;
+
+export const ToggleBox = styled.div`
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button {
+        color: #666;
+    }
+
+    @media only screen and (width <= 768px) {
+        width: 40%;
+        justify-content: flex-end; 
     }
 `;
