@@ -1,7 +1,4 @@
-import React from 'react';
-
-//Components
-import Layout from '../../components/layout';
+import React, { lazy, Suspense } from "react";
 
 //Apollo
 import { useQuery } from '@apollo/client';
@@ -12,6 +9,10 @@ import HOME_QUERY from '../../services/querys/homeQuery';
 //Styles
 import * as S from './style';
 
+//Components
+import Layout from '../../components/layout';
+const Florest3D = lazy(() => import("../../components/spline/index"));
+
 export default function Home() {
 
     const { data, loading, error } = useQuery(HOME_QUERY);
@@ -21,23 +22,18 @@ export default function Home() {
 
     console.log(data);
 
-    const { home } = data;
+    /* const { home } = data; */
 
     return (
         <>
             <Layout>
                 <S.Main>
                     <S.ContentWrapper>
-                        <span>Hi 👋,</span>
-                        <span>My name is </span>
-                        <span className='gradient'>Gustavo Almeida</span>
-                        <span>I'm a Front-end developer</span>
+                        <h1>Gustavo <span>Almeida</span></h1>
                     </S.ContentWrapper>
-                    <S.ProfilePhotoWrapper>
-                        <S.Border>
-                            <img src={home.profilePhoto.url} alt="Profile" draggable="false" />
-                        </S.Border>
-                    </S.ProfilePhotoWrapper>
+                    <Suspense fallback={<p>Loading...</p>}>
+                        <Florest3D />
+                    </Suspense>
                 </S.Main>
             </Layout>
         </>

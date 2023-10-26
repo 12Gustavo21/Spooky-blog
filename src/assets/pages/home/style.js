@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.main`
     width: 100%;
-    height: 120vh;
-    background-color: ${({ theme }) => theme.body};
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,89 +14,35 @@ export const Main = styled.main`
 `;
 
 export const ContentWrapper = styled.div`
-    width: 50%;
-    height: 50%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    padding-left: 2rem;
 
-    span {
-        color: #42446E;
-        font: 700 2.625rem/4rem Poppins, sans-serif;
+    h1 {
+        color: #f56f29;
+        font: 400 5rem/6rem Nosifer, sans-serif;
+        position: absolute;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        text-shadow: 
+            0 1px 0 #ff6600, /* Laranja */
+            0 2px 0 #ff3300, /* Vermelho */
+            0 3px 0 #ff9933, /* Laranja claro */
+            0 4px 0 #ff0000, /* Vermelho brilhante */
+            0 5px 0 #990000, /* Vermelho escuro */
+            0 6px 1px rgba(0, 0, 0, 0.5),
+            0 0 5px rgba(0, 0, 0, 0.5),
+            0 1px 3px rgba(0, 0, 0, 0.7),
+            0 3px 5px rgba(0, 0, 0, 0.5),
+            0 5px 10px rgba(0, 0, 0, 0.6),
+            0 10px 10px rgba(0, 0, 0, 0.4),
+            0 20px 20px rgba(0, 0, 0, 0.3);
 
-        &.gradient {
-            background: linear-gradient(to left, #E70FAA, #13B0F5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        span {
+            position: relative;
+            left: 1rem;
         }
-
-        @media only screen and (width <= 425px) {
-            font-size: 2rem;
-        }
-    }
-
-    @media only screen and (width <= 900px) {
-        width: 100%;
-        height: 45%;
-        justify-content: flex-end;
-    }
-
-    @media only screen and (width <= 425px) {
-        padding-left: 1rem;
-    }
-`;
-
-export const Border = styled.div`
-    width: 22.8rem;
-    height: 22.8rem;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #E70FAA, #00C0FD);
-    display: grid;
-    place-items: center;
-
-    @media only screen and (width <= 600px) {
-        width: 18.8rem;
-        height: 18.8rem;
-    }
-`;
-
-export const ProfilePhotoWrapper = styled.figure`
-    width: 40%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-        width: 21.8125rem;
-        height: 21.8125rem;
-        border-radius: 50%;
-        filter: grayscale(100%);
-        object-fit: cover;
-        transition: all 0.3s ease-in-out;
-        user-select: none;
-
-        &:hover {
-            transform: scale(.95);
-            filter: grayscale(0%);
-        }
-
-        @media only screen and (width <= 600px) {
-            width: 17.8125rem;
-            height: 17.8125rem;
-        }
-    }
-
-    @media only screen and (width <= 900px) {
-        width: 100%;
-        height: 50%;
-        align-items: flex-start;
-        padding-top: 4rem;
-    }
-
-    @media only screen and (width <= 600px) {
-        padding-top: 2rem;
     }
 `;
