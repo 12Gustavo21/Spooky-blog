@@ -8,10 +8,10 @@ import { FaGithub } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { BsLinkedin } from 'react-icons/bs';
 
-export default function index() {
+export default function index({ positionFooter }) {
     return (
         <>
-            <S.Footer>
+            <S.Footer positionFooter={positionFooter}>
                 <S.Container>
                     <S.FooterBoxOne>
                         <S.Icons>

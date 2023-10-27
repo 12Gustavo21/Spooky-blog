@@ -6,7 +6,7 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: ${({ positionFooter }) => positionFooter};
     bottom: 0;
 `;
 
@@ -29,7 +29,7 @@ export const FooterBoxOne = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 5rem 0;
+    padding: 0 0 2rem 0;
     border-bottom: .1rem solid #66666650;
 `;
 
@@ -46,7 +46,7 @@ export const Icons = styled.div`
         cursor: pointer;
 
         &:hover {
-            fill: #42446E;
+            fill: #f67e2b;
             transform: scale(1.2);
         }
     }

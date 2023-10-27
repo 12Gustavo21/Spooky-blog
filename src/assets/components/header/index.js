@@ -13,11 +13,11 @@ import Logo from '../../img/logo.webp';
 //Styles
 import * as S from './style';
 
-export default function Header() {
+export default function Header({positionHeader}) {
 
     return (
         <>
-            <S.Header>
+            <S.Header positionHeader={positionHeader}>
                 <S.Container>
                     <S.LogoBox>
                         <Link to="/">

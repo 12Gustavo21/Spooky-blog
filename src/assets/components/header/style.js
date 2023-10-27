@@ -6,7 +6,7 @@ export const Header = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: ${({ positionHeader }) => positionHeader};
     transition: all 0.3s ease-in-out;
 `;
 
