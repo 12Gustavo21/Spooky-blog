@@ -21,7 +21,7 @@
 - code . (if you use VSCode)
 - npm start or yarn start
  
- ## 💻 Online Page: https://spooky-blog.bohr.io
+ ## 💻 Online Page: https://spooky-blog-12gustavo21.bohr.io
 
 ## 🌐 Contact me:
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/gualmda) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/12gustavo21)
