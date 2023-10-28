@@ -25,24 +25,11 @@ export const ContentWrapper = styled.div`
 
     h1 {
         color: #f56f29;
-        font: 400 10rem/8rem 'Amatic SC', sans-serif;
+        font: 400 8rem/7rem 'Amatic SC', sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        text-shadow: 
-            0 0.0625rem 0 #ff6600,
-            0 0.125rem 0 #ff3300,
-            0 0.1875rem 0 #ff9933,
-            0 0.25rem 0 #ff0000,
-            0 0.3125rem 0 #990000,
-            0 0.375rem 0.0625rem rgba(0, 0, 0, 0.5),
-            0 0 0.3125rem rgba(0, 0, 0, 0.5),
-            0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.7),
-            0 0.1875rem 0.3125rem rgba(0, 0, 0, 0.5),
-            0 0.3125rem 0.625rem rgba(0, 0, 0, 0.6),
-            0 0.625rem 0.625rem rgba(0, 0, 0, 0.4),
-            0 1.25rem 1.25rem rgba(0, 0, 0, 0.3);
         animation: squiggly-anim 0.34s linear infinite;
 
         span {

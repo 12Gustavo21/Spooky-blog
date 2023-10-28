@@ -30,11 +30,23 @@ export const LogoBox = styled.figure`
     align-items: center;
 
     img {
-        width: 8rem;
-        height: 8rem;
+        width: 7rem;
+        height: 7rem;
         object-fit: contain;
-        transform: scaleX(-1);
         transition: all 0.3s ease-in-out;
+        animation: float 3s ease-in-out infinite;
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scaleX(-1);
+            }
+            50% {
+                transform: translateY(0.5rem) scaleX(-1);
+            }
+            100% {
+                transform: translateY(0) scaleX(-1);
+            }
+        }
 
         @media only screen and (width <= 1024px) {
             width: 6rem;

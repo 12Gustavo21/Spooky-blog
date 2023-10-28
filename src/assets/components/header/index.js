@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 //React router dom
 import { Link } from 'react-router-dom';
@@ -13,21 +13,29 @@ import Logo from '../../img/logo.webp';
 //Styles
 import * as S from './style';
 
-export default function Header({positionHeader}) {
+//AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+export default function Header({ positionHeader }) {
+
+    useEffect(() => {
+        AOS.init();
+    });
 
     return (
         <>
             <S.Header positionHeader={positionHeader}>
                 <S.Container>
-                    <S.LogoBox>
+                    <S.LogoBox data-aos="fade-right" data-aos-duration="2000">
                         <Link to="/">
-                            <img src={Logo} alt='Logo' width={"100rem"} />
+                            <img src={Logo} alt='Logo' />
                         </Link>
                     </S.LogoBox>
-                    <S.NavBox>
+                    <S.NavBox data-aos="fade-left" data-aos-duration="2000">
                         <NavBar />
                     </S.NavBox>
-                    <S.MenuBox>
+                    <S.MenuBox data-aos="fade-left" data-aos-duration="2000">
                         <Menu />
                     </S.MenuBox>
                 </S.Container>

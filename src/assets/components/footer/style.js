@@ -34,10 +34,10 @@ export const FooterBoxOne = styled.div`
 `;
 
 export const Icons = styled.div`
-    width: 10%;
+    width: 15%;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     
     svg {

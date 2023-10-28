@@ -52,12 +52,3 @@ export const Item = styled.li`
     color: #fff;
     transition: all .2s ease-in-out;
 `;
-
-export const Icons = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #fff;
-    gap: 1em;
-`;
