@@ -28,18 +28,23 @@ export const List = styled.ul`
 export const Item = styled.li`
     font: bold 1.25rem/2rem "DM Sans", sans-serif;
     color: #666;
+    transition: transform 250ms ease-in-out;
 
     &::after {
         content: "";
         display: block;
         border-bottom: .15rem solid #666;
-        transform: scaleX(0);
+        transform: scaleX(.05);
         transition: transform 250ms ease-in-out;
     }
 
     &:hover::after {
         transform: scaleX(1);
         transform-origin: center;
+    }
+
+    &:hover {
+        transform: translateY(-.25rem);
     }
 
     @media only screen and (width <= 950px) {

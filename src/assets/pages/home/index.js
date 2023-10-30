@@ -18,7 +18,6 @@ import Layout from '../../components/layout';
 import Loading from '../../components/loading';
 const Forest3D = lazy(() => import("../../components/spline/index"));
 
-
 export default function Home() {
     useEffect(() => {
         AOS.init();
@@ -33,10 +32,9 @@ export default function Home() {
 
     const { home } = data;
 
-
     return (
         <>
-            <Layout positionHeader="fixed" positionFooter="absolute">
+            <Layout positionHeader="fixed" backgroundHeader="transparent" positionFooter="absolute" backgroundFooter="transparent">
                 <S.Main>
                     <S.ContentWrapper data-aos="fade-right" data-aos-duration="2000">
                         <h1 dangerouslySetInnerHTML={{ __html: home.title.text.replace(/\\n/g, '') }}></h1>

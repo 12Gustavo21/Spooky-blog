@@ -6,6 +6,7 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ${({ backgroundFooter }) => backgroundFooter};
     position: ${({ positionFooter }) => positionFooter};
     bottom: 0;
 `;

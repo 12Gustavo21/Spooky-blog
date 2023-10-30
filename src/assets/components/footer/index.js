@@ -12,7 +12,7 @@ import { BsLinkedin } from 'react-icons/bs';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Index({ positionFooter }) {
+export default function Index({ positionFooter, backgroundFooter }) {
 
     useEffect(() => {
         AOS.init();
@@ -20,7 +20,7 @@ export default function Index({ positionFooter }) {
 
     return (
         <>
-            <S.Footer positionFooter={positionFooter}>
+            <S.Footer positionFooter={positionFooter} backgroundFooter={backgroundFooter}>
                 <S.Container>
                     <S.FooterBoxOne>
                         <S.Icons>

@@ -7,6 +7,7 @@ export const Header = styled.header`
     justify-content: center;
     align-items: center;
     position: ${({ positionHeader }) => positionHeader};
+    background-color: ${({ backgroundHeader }) => backgroundHeader};
     transition: all 0.3s ease-in-out;
 `;
 
@@ -72,7 +73,7 @@ export const MenuBox = styled.div`
     height: 100%;
     display: none;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
     
     @media only screen and (width <= 768px) {
         display: flex;

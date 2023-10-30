@@ -13,29 +13,21 @@ import Logo from '../../img/logo.webp';
 //Styles
 import * as S from './style';
 
-//AOS
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-export default function Header({ positionHeader }) {
-
-    useEffect(() => {
-        AOS.init();
-    });
+export default function Header({ positionHeader, backgroundHeader }) {
 
     return (
         <>
-            <S.Header positionHeader={positionHeader}>
+            <S.Header positionHeader={positionHeader} backgroundHeader={backgroundHeader}>
                 <S.Container>
-                    <S.LogoBox data-aos="fade-right" data-aos-duration="2000">
+                    <S.LogoBox>
                         <Link to="/">
                             <img src={Logo} alt='Logo' />
                         </Link>
                     </S.LogoBox>
-                    <S.NavBox data-aos="fade-left" data-aos-duration="2000">
+                    <S.NavBox>
                         <NavBar />
                     </S.NavBox>
-                    <S.MenuBox data-aos="fade-left" data-aos-duration="2000">
+                    <S.MenuBox>
                         <Menu />
                     </S.MenuBox>
                 </S.Container>

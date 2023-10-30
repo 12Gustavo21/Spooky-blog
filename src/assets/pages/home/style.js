@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+/*
+    Palette:
+    #070a0a
+    #f56f29
+*/
+
 export const Main = styled.main`
     width: 100%;
     height: 100vh;

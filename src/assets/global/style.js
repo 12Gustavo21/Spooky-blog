@@ -6,12 +6,12 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-
+    
     ::selection {
         background: #f67e2b;
         color: #fff;
     }
-
+    
     html {
         scroll-behavior: smooth;
     }

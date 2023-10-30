@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 //User Location
 import { useLocation } from 'react-router-dom';
 
-export default function Index({ children, positionHeader, positionFooter }) {
+export default function Index({ children, positionHeader, backgroundHeader, positionFooter, backgroundFooter }) {
 
     const SetTitle = () => {
         const path = useLocation().pathname;
@@ -31,9 +31,9 @@ export default function Index({ children, positionHeader, positionFooter }) {
             <Helmet>
                 <title>{SetTitle()}</title>
             </Helmet>
-            <Header positionHeader={positionHeader} />
+            <Header positionHeader={positionHeader} backgroundHeader={backgroundHeader} />
             {children}
-            <Footer positionFooter={positionFooter} />
+            <Footer positionFooter={positionFooter} backgroundFooter={backgroundFooter} />
         </>
     )
 }
