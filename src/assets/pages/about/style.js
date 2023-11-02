@@ -15,7 +15,7 @@ export const Main = styled.main`
 `;
 
 export const CanvasWrapper = styled.section`
-    width: 100%;
+    width: 100%;    
     height: 100vh;
     position: absolute;
     overflow: hidden;
