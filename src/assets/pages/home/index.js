@@ -13,12 +13,32 @@ import * as S from './style';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+//Helmet
+import { Helmet } from 'react-helmet';
+
+//User Location
+import { useLocation } from 'react-router-dom';
+
 //Components
 import Layout from '../../components/layout';
 import Loading from '../../components/loading';
-const Forest3D = lazy(() => import("../../components/spline/index"));
+const Forest = lazy(() => import("../../components/forest"));
 
 export default function Home() {
+
+    const SetBodyClass = () => {
+        const path = useLocation().pathname;
+        let location = '';
+
+        if (path === '/') {
+            location = 'home'
+        } else {
+            location = path.slice(1)
+        };
+
+        return location
+    };
+
     useEffect(() => {
         AOS.init();
     });
@@ -34,6 +54,9 @@ export default function Home() {
 
     return (
         <>
+            <Helmet>
+                <body className={SetBodyClass()} />
+            </Helmet>
             <Layout positionHeader="fixed" backgroundHeader="transparent" positionFooter="absolute" backgroundFooter="transparent">
                 <S.Main>
                     <S.ContentWrapper data-aos="fade-right" data-aos-duration="2000">
@@ -64,7 +87,7 @@ export default function Home() {
                         </svg>
                     </S.ContentWrapper>
                     <Suspense fallback={<p>Loading...</p>}>
-                        <Forest3D />
+                        <Forest />
                     </Suspense>
                 </S.Main>
             </Layout>

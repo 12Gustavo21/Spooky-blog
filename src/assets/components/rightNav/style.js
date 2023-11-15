@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
     display: none;
     list-style: none;
-    z-index: 2;
+    z-index: 9;
 
     @media (width <= 768px) {
         display: flex;

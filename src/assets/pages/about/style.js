@@ -12,15 +12,24 @@ import styled from "styled-components";
 export const Main = styled.main`
     width: 100%;
     min-height: 100vh;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(1, 1, 1, 0.5);
+        z-index: 1;
+    }
 `;
 
 export const CanvasWrapper = styled.section`
     width: 100%;    
     height: 100vh;
     position: absolute;
-    overflow: hidden;
+    top: 0;
     z-index: -1;
-    background: #130F26;
+    overflow: hidden;
 `;
 
 export const AboutWrapper = styled.section`
@@ -29,6 +38,8 @@ export const AboutWrapper = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 `;
 
 export const AboutTitleDivision = styled.div`
@@ -53,6 +64,8 @@ export const WorkWrapper = styled.section`
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 `;
 
 export const WorkTitleDivision = styled.div`
@@ -85,7 +98,7 @@ export const WorkTitleBox = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    padding-bottom: .5rem;
+    margin: 1.2rem 0;
     font: 400 1.5rem/2rem 'Poppins', sans-serif;
     color: #f67e2b;
 `;
@@ -129,6 +142,8 @@ export const EducationWrapper = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 `;
 
 export const EducationTitleDivision = styled.div`
@@ -161,7 +176,7 @@ export const EducationTitleBox = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    padding-bottom: .5rem;
+    margin: 1.2rem 0;
     font: 400 1.5rem/2rem 'Poppins', sans-serif;
     color: #f67e2b;
 `;

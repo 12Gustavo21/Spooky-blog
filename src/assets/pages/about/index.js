@@ -99,7 +99,7 @@ function EducationSection({ about }) {
     );
 }
 
-function Main() {
+function Index() {
 
     useEffect(() => {
         AOS.init();
@@ -113,7 +113,7 @@ function Main() {
     const { about } = data;
 
     return (
-        <Layout backgroundHeader="#130F26" backgroundFooter="#130F26" >
+        <Layout backgroundHeader="#070c11" backgroundFooter="#070c11" >
             <S.Main>
                 <FireflyCanvas />
                 <AboutSection about={about} />
@@ -124,4 +124,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default Index;

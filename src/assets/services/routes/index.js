@@ -3,6 +3,9 @@ import React from 'react';
 //React router dom
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+//Components
+import { AudioProvider } from '../../components/audioContext';
+
 //Pages
 import Home from '../../pages/home';
 import Error from '../../pages/error';
@@ -15,14 +18,16 @@ export default function index() {
     return (
         <>
             <Router>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="*" element={<Error />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/techStack" element={<TechStack />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
+                <AudioProvider>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="*" element={<Error />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route path="/techStack" element={<TechStack />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                    </Routes>
+                </AudioProvider>
             </Router>
         </>
     )

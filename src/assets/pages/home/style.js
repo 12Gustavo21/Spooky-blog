@@ -12,11 +12,9 @@ export const Main = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #070a0a;
 
     @media only screen and (width <= 900px) {
         flex-direction: column;
-        height: 135vh;
     }
 `;
 
@@ -26,8 +24,8 @@ export const ContentWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    left: 5%;
-    bottom: 25%;
+    left: 39%;
+    top: 35%;
 
     h1 {
         color: #f56f29;

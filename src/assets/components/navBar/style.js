@@ -9,7 +9,7 @@ export const Nav = styled.nav`
 `;
 
 export const List = styled.ul`
-    width: 60%;
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -40,10 +40,12 @@ export const Item = styled.li`
 
     &:hover::after {
         transform: scaleX(1);
+        border-color: #f56f29;
         transform-origin: center;
     }
 
     &:hover {
+        color: #f56f29;
         transform: translateY(-.25rem);
     }
 

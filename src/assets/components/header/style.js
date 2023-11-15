@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const spin = keyframes`
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+`;
 
 export const Header = styled.header`
     width: 100%;
@@ -77,5 +86,42 @@ export const MenuBox = styled.div`
     
     @media only screen and (width <= 768px) {
         display: flex;
+    }
+`;
+
+export const AudioBox = styled.div`
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .active {
+        animation: ${spin} 3s linear infinite;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    button {
+        width: 3.5rem;
+        height: 3.5rem;
+        color: #ffffff;
+        background: rgba( 255, 255, 255, 0.1 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        border-radius: 100%;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background: rgba( 255, 255, 255, 0.2 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            transition: all 0.3s ease-in-out;
+        }
     }
 `;
