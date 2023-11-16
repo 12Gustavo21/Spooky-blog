@@ -24,9 +24,8 @@ export const ContentWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    left: 39%;
-    top: 35%;
-
+    z-index: -1;
+    
     h1 {
         color: #f56f29;
         font: 400 8rem/7rem 'Amatic SC', sans-serif;
@@ -34,6 +33,7 @@ export const ContentWrapper = styled.div`
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        margin: 5rem 4rem 0 0;
         animation: squiggly-anim 0.34s linear infinite;
 
         span {
@@ -56,6 +56,15 @@ export const ContentWrapper = styled.div`
             100% {
                 filter: url('#squiggly-4');
             }
+        }
+
+        @media only screen and (width <= 768px) {
+            margin: 3rem 3rem 0 0;
+        }
+
+        @media only screen and (width <= 600px) {
+            margin: 3rem 0 0 0;
+            font-size: 6rem;
         }
     }
 `;

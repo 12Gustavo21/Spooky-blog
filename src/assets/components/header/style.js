@@ -81,7 +81,7 @@ export const MenuBox = styled.div`
     width: 20%;
     height: 100%;
     display: none;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     
     @media only screen and (width <= 768px) {
@@ -123,5 +123,10 @@ export const AudioBox = styled.div`
             border: 1px solid rgba( 255, 255, 255, 0.18 );
             transition: all 0.3s ease-in-out;
         }
+    }
+
+    @media only screen and (width <= 768px) {
+        width: 50%;
+        justify-content: flex-end;
     }
 `;

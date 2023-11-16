@@ -18,8 +18,9 @@ const windys = keyframes`
 export const contentWrapper = styled.section`
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     background: linear-gradient(to bottom, #072770 1%, #130F26 100%);
+    overflow: hidden;
 `;
 
 export const foreground = styled.div`
@@ -30,6 +31,7 @@ export const foreground = styled.div`
     left: 0px;
     pointer-events: none;
     z-index: 2;
+    overflow: hidden;
 `;
 
 export const trees3 = styled.ul`
@@ -73,7 +75,7 @@ export const trees3 = styled.ul`
     li:nth-child(15) { right: 696px; bottom: -132px; }
     li:nth-child(16) { right: 730px; bottom: -150px; }
 
-    @media screen and (min-height: 0px) and (max-height: 600px) {
+    @media screen and (min-width: 0px) and (max-width: 600px) {
         bottom: -300px;
     }
 `;
@@ -117,7 +119,7 @@ export const trees2 = styled.ul`
     li:nth-child(15) { right: 270px; bottom: -180px; }
     li:nth-child(16) { right: 340px; bottom: -210px; }
 
-    @media screen and (min-height: 0px) and (max-height: 600px) {
+    @media screen and (min-width: 0px) and (max-width: 600px) {
         bottom: -170px;
     }
 `;
@@ -162,7 +164,7 @@ export const trees1 = styled.ul`
     li:nth-child(15) { right: 302px; bottom: -240px; }
     li:nth-child(16) { right: 340px; bottom: -210px; }
 
-    @media screen and (min-height: 0px) and (max-height: 600px) {
+    @media screen and (min-width: 0px) and (max-width: 600px) {
         bottom: -270px;
     }
 `;
@@ -172,6 +174,7 @@ export const background = styled.div`
     height: 100%;
     position: absolute;
     z-index: 1;
+    overflow: hidden;
 `;
 
 const glow = keyframes`

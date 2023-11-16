@@ -9,6 +9,7 @@ export const Footer = styled.footer`
     background-color: ${({ backgroundFooter }) => backgroundFooter};
     position: ${({ positionFooter }) => positionFooter};
     bottom: 0;
+    z-index: -1;
 `;
 
 export const Container = styled.section`
