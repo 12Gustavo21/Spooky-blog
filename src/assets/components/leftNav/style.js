@@ -8,7 +8,7 @@ export const List = styled.ul`
     @media (width <= 768px) {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         flex-flow: column nowrap;
         background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.85) 100%);
         position: fixed;
@@ -17,6 +17,7 @@ export const List = styled.ul`
         min-height: 100vh;
         width: 18.75rem;
         padding-top: 1rem;
+        gap: 2rem;
         font: 400 1.25rem/2rem 'DM Sans', sans-serif;
         transition: transform 0.3s ease-in-out;
 
