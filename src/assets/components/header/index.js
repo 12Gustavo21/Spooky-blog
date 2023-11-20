@@ -27,22 +27,6 @@ export default function Header() {
     const [scroll, setScroll] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
 
-    const handleScroll = () => {
-        const currentPosition = window.scrollY;
-
-        setScrollPosition(currentPosition);
-
-        if (currentPosition > 0) {
-            if (scrollPosition > currentPosition) {
-                setScroll('up');
-            } else {
-                setScroll('down');
-            }
-        } else {
-            setScroll(false);
-        }
-    };
-
     useEffect(() => {
         soundRef.current = new Audio(ForestSong);
         soundRef.current.loop = true;
@@ -61,12 +45,28 @@ export default function Header() {
     }, [isPlaying]);
 
     useEffect(() => {
+        const handleScroll = () => {
+            const currentPosition = window.scrollY;
+
+            setScrollPosition(currentPosition);
+
+            if (currentPosition > 0) {
+                if (scrollPosition > currentPosition) {
+                    setScroll('up');
+                } else {
+                    setScroll('down');
+                }
+            } else {
+                setScroll(false);
+            }
+        };
+
         window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [handleScroll]);
+    });
 
     return (
         <>

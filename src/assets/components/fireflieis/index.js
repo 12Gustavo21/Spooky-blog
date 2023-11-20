@@ -19,30 +19,30 @@ const FireflyCanvas = () => {
     };
   }
 
-  function updateFireflyPositions() {
-    setFireflies((prevFireflies) =>
-      prevFireflies.map((firefly) => {
-        const updatedFirefly = {
-          ...firefly,
-          x: firefly.x + firefly.speedX,
-          y: firefly.y + firefly.speedY,
-        };
-
-        if (
-          updatedFirefly.x < 0 ||
-          updatedFirefly.x > window.innerWidth ||
-          updatedFirefly.y < 0 ||
-          updatedFirefly.y > window.innerHeight
-        ) {
-          return createFirefly();
-        }
-
-        return updatedFirefly;
-      })
-    );
-  }
-
   useEffect(() => {
+    function updateFireflyPositions() {
+      setFireflies((prevFireflies) =>
+        prevFireflies.map((firefly) => {
+          const updatedFirefly = {
+            ...firefly,
+            x: firefly.x + firefly.speedX,
+            y: firefly.y + firefly.speedY,
+          };
+  
+          if (
+            updatedFirefly.x < 0 ||
+            updatedFirefly.x > window.innerWidth ||
+            updatedFirefly.y < 0 ||
+            updatedFirefly.y > window.innerHeight
+          ) {
+            return createFirefly();
+          }
+  
+          return updatedFirefly;
+        })
+      );
+    }
+
     const animate = () => {
       updateFireflyPositions();
       requestAnimationFrame(animate);
