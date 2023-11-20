@@ -1,10 +1,26 @@
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
-//Assets
-import darkForest from '../../img/dark-forest.png';
-
-export const Canvas = styled.canvas`
-    width: 100%;
+export const CanvasContainer = styled.div`
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    background: url(${darkForest}) no-repeat center/cover fixed;
+    overflow: hidden;
+`;
+
+export const fadeInOut = keyframes`
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+`;
+
+export const Firefly = styled.div`
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #f8e71c;
+    border-radius: 50%;
+    animation: ${fadeInOut} 2s infinite;
 `;

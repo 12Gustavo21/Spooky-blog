@@ -7,6 +7,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+	z-index: 9999;
   gap: 1rem;
   background-color: #070a0a;
 `;

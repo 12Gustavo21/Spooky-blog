@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 //React router dom
 import { Link } from 'react-router-dom';
@@ -20,9 +20,28 @@ import { MdMusicNote, MdMusicOff } from 'react-icons/md';
 //Main sound
 import ForestSong from '../../sounds/night-forest-soundscape.mp3';
 
-export default function Header({ positionHeader, backgroundHeader }) {
+export default function Header() {
     const { isPlaying, toggleSound } = useAudio();
     const soundRef = useRef(null);
+
+    const [scroll, setScroll] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleScroll = () => {
+        const currentPosition = window.scrollY;
+
+        setScrollPosition(currentPosition);
+
+        if (currentPosition > 0) {
+            if (scrollPosition > currentPosition) {
+                setScroll('up');
+            } else {
+                setScroll('down');
+            }
+        } else {
+            setScroll(false);
+        }
+    };
 
     useEffect(() => {
         soundRef.current = new Audio(ForestSong);
@@ -41,11 +60,19 @@ export default function Header({ positionHeader, backgroundHeader }) {
         };
     }, [isPlaying]);
 
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll]);
+
     return (
         <>
-            <S.Header positionHeader={positionHeader} backgroundHeader={backgroundHeader}>
+            <S.Header scroll={scroll}>
                 <S.Container>
-                    <S.LogoBox>
+                    <S.LogoBox scroll={scroll}>
                         <Link to="/">
                             <img src={Logo} alt='Logo' />
                         </Link>

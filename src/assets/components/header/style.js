@@ -11,12 +11,14 @@ const spin = keyframes`
 
 export const Header = styled.header`
     width: 100%;
-    height: 15vh;
+    height: ${({ scroll }) => (scroll ? '9vh' : '15vh')};
     display: flex;
     justify-content: center;
     align-items: center;
-    position: ${({ positionHeader }) => positionHeader};
-    background-color: ${({ backgroundHeader }) => backgroundHeader};
+    background: ${({ scroll }) => (scroll ? 'rgba( 14, 11, 20, .9 )' : 'transparent')};
+    box-shadow: ${({ scroll }) => (scroll ? '0 8px 32px 0 rgba( 246, 126, 43, 0.37)' : 'none')};
+    position: fixed;
+    z-index: 1;
     transition: all 0.3s ease-in-out;
 `;
 
@@ -40,8 +42,8 @@ export const LogoBox = styled.figure`
     align-items: center;
 
     img {
-        width: 7rem;
-        height: 7rem;
+        width: ${({ scroll }) => (scroll ? '5rem' : '7rem')};
+        height: ${({ scroll }) => (scroll ? '5rem' : '7rem')};
         object-fit: contain;
         transition: all 0.3s ease-in-out;
         animation: float 3s ease-in-out infinite;
@@ -59,8 +61,8 @@ export const LogoBox = styled.figure`
         }
 
         @media only screen and (width <= 1024px) {
-            width: 6rem;
-            height: 6rem;
+            width: ${({ scroll }) => (scroll ? '4.5rem' : '6rem')};
+            height: ${({ scroll }) => (scroll ? '4.5rem' : '6rem')};
         }
     }
 `;
@@ -106,7 +108,7 @@ export const AudioBox = styled.div`
         height: 3.5rem;
         color: #ffffff;
         background: rgba( 255, 255, 255, 0.1 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        box-shadow: 0 8px 32px 0 rgba( 246, 126, 43, 0.37);
         backdrop-filter: blur( 4px );
         -webkit-backdrop-filter: blur( 4px );
         border-radius: 10px;
@@ -117,7 +119,6 @@ export const AudioBox = styled.div`
 
         &:hover {
             background: rgba( 255, 255, 255, 0.2 );
-            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
             backdrop-filter: blur( 4px );
             -webkit-backdrop-filter: blur( 4px );
             border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -128,5 +129,10 @@ export const AudioBox = styled.div`
     @media only screen and (width <= 768px) {
         width: 50%;
         justify-content: flex-end;
+
+        button {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 `;

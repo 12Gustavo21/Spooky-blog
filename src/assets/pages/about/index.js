@@ -42,12 +42,12 @@ function AboutSection({ about }) {
 function WorkSection({ about }) {
     return (
         <S.WorkWrapper>
-            <S.WorkTitleDivision data-aos="fade-up" data-aos-duration="2000">
+            <S.WorkTitleDivision data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
                 <h2>{about.workTitle}</h2>
             </S.WorkTitleDivision>
             <S.WorkDivision>
                 {about.works.map((work, index) => (
-                    <S.Work key={index} data-aos="fade-up" data-aos-duration="2250">
+                    <S.Work key={index} data-aos="fade-up" data-aos-duration="2250" data-aos-anchor-placement="top-bottom">
                         <S.WorkTitleBox>
                             <h3>{work.workDescription}</h3>
                         </S.WorkTitleBox>
@@ -71,12 +71,12 @@ function WorkSection({ about }) {
 function EducationSection({ about }) {
     return (
         <S.EducationWrapper>
-            <S.EducationTitleDivision data-aos="fade-up" data-aos-duration="2500">
+            <S.EducationTitleDivision data-aos="fade-up" data-aos-duration="2500" data-aos-anchor-placement="top-bottom">
                 <h2>{about.educationTitle}</h2>
             </S.EducationTitleDivision>
             <S.EducationDivision>
                 {about.educations.map((education, index) => (
-                    <S.Education key={index} data-aos="fade-up" data-aos-duration="2750">
+                    <S.Education key={index} data-aos="fade-up" data-aos-duration="2750" data-aos-anchor-placement="top-bottom">
                         <S.EducationTitleBox>
                             <h3>{education.educationDescription}</h3>
                         </S.EducationTitleBox>
@@ -116,9 +116,11 @@ function Index() {
         <Layout backgroundHeader="#070c11" backgroundFooter="#070c11" >
             <S.Main>
                 <FireflyCanvas />
-                <AboutSection about={about} />
-                <WorkSection about={about} />
-                <EducationSection about={about} />
+                <S.ContentWrapper>
+                    <AboutSection about={about} />
+                    <WorkSection about={about} />
+                    <EducationSection about={about} />
+                </S.ContentWrapper>
             </S.Main>
         </Layout>
     );

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Components
 import { AudioProvider } from '../../components/audioContext';
+import Header from '../../components/header';
 
 //Pages
 import Home from '../../pages/home';
@@ -19,6 +20,7 @@ export default function index() {
         <>
             <Router>
                 <AudioProvider>
+                    <Header />
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="*" element={<Error />} />

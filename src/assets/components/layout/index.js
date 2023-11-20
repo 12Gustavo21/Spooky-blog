@@ -1,7 +1,6 @@
 import React from 'react';
 
 //Components
-import Header from '../header';
 import Footer from '../footer';
 
 //Helmet
@@ -31,7 +30,6 @@ export default function Index({ children, positionHeader, backgroundHeader, posi
             <Helmet>
                 <title>{SetTitle()}</title>
             </Helmet>
-            <Header positionHeader={positionHeader} backgroundHeader={backgroundHeader} />
             {children}
             <Footer positionFooter={positionFooter} backgroundFooter={backgroundFooter} />
         </>
