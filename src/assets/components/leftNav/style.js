@@ -16,7 +16,7 @@ export const List = styled.ul`
         inset: 0;
         min-height: 100vh;
         width: 18.75rem;
-        padding-top: 5rem;
+        padding-top: 1rem;
         font: 400 1.25rem/2rem 'DM Sans', sans-serif;
         transition: transform 0.3s ease-in-out;
 

@@ -196,6 +196,10 @@ export const WorkDescriptionBox = styled.div`
         align-items: flex-start;
         gap: .5rem;
     }
+
+    @media only screen and (width <= 375px) {
+        font-size: .83rem;
+    }
 `;
 
 export const WorkEnterpriseBox = styled.div`
@@ -323,6 +327,10 @@ export const EducationDescriptionBox = styled.div`
         justify-content: flex-start;
         align-items: flex-start;
         gap: .5rem;
+    }
+
+    @media only screen and (width <= 375px) {
+        font-size: .83rem;
     }
 `;
 
