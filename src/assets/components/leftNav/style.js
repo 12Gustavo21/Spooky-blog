@@ -12,9 +12,8 @@ export const List = styled.ul`
         flex-flow: column nowrap;
         background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.85) 100%);
         position: fixed;
-        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
-        top: 0;
-        right: 0;
+        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+        inset: 0;
         min-height: 100vh;
         width: 18.75rem;
         padding-top: 5rem;

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { useEffect } from "react";
 
 //Apollo
 import { useQuery } from '@apollo/client';
@@ -22,7 +22,7 @@ import { useLocation } from 'react-router-dom';
 //Components
 import Layout from '../../components/layout';
 import Loading from '../../components/loading';
-const Forest = lazy(() => import("../../components/forest"));
+import Forest from "../../components/forest";
 
 export default function Home() {
 
@@ -59,7 +59,7 @@ export default function Home() {
             </Helmet>
             <Layout positionHeader="fixed" backgroundHeader="transparent" positionFooter="absolute" backgroundFooter="transparent">
                 <S.Main>
-                    <S.ContentWrapper data-aos="fade-right" data-aos-duration="2000">
+                    <S.ContentWrapper data-aos="fade-up" data-aos-duration="2000">
                         <h1 dangerouslySetInnerHTML={{ __html: home.title.text.replace(/\\n/g, '') }}></h1>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                             <defs>
@@ -86,9 +86,7 @@ export default function Home() {
                             </defs>
                         </svg>
                     </S.ContentWrapper>
-                    <Suspense fallback={<p>Loading...</p>}>
-                        <Forest />
-                    </Suspense>
+                    <Forest />
                 </S.Main>
             </Layout>
         </>
