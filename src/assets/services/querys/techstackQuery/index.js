@@ -1,7 +1,13 @@
-import React from 'react'
+import { gql } from "@apollo/client";
 
-export default function index() {
-    return (
-        <>techStackQuery</>
-    )
-}
+export const TECH_QUERY = gql`
+    query {
+        techStack(where: {slug: "techstack"}) {
+            title
+            description
+            technology
+        }
+    }
+`;
+
+export default TECH_QUERY;

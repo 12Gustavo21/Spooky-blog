@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const ContentWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+	position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;

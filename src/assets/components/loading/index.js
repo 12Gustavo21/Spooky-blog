@@ -8,7 +8,7 @@ export default function index() {
     <>
       <S.ContentWrapper>
         <S.Title>
-          <h1>Carregando...</h1>
+          <h1>Loading...</h1>
         </S.Title>
         <S.Bat></S.Bat>
       </S.ContentWrapper>

@@ -22,7 +22,7 @@ import { useLocation } from 'react-router-dom';
 //Components
 import Layout from '../../components/layout';
 import Loading from '../../components/loading';
-import Forest from "../../components/forest";
+import Forest from "../../components/nightBackground";
 
 export default function Home() {
 
