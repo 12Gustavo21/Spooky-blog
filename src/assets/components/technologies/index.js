@@ -19,9 +19,9 @@ export default function Cards({ tech }) {
   return (
     <S.ContentWrapper>
       <Atropos>
-        <div className="atropos atropos-header w-full atropos-rotate-touch-scroll-y atropos-rotate-touch">
-          <div className='atropos-scale'>
-            {tech.technology.map((technology, index) => (
+        {tech.technology.map((technology, index) => (
+          <div className="atropos atropos-header w-full atropos-rotate-touch-scroll-y atropos-rotate-touch">
+            <div className='atropos-scale'>
               <a href={technology.docs} target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-duration="2000" key={index}>
                 <div className='atropos-rotate'>
                   <div className='atropos-inner'>
@@ -29,9 +29,9 @@ export default function Cards({ tech }) {
                   </div>
                 </div>
               </a>
-            ))}
+            </div>
           </div>
-        </div>
+        ))}
       </Atropos>
     </S.ContentWrapper>
   );
