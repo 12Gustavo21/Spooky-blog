@@ -23,7 +23,7 @@ export const ContentWrapper = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 11, 29, .7);
+      background-color: rgba(0, 11, 29, 0.7);
       border-radius: 1.5rem;
 
       .atropos-rotate {
@@ -36,6 +36,30 @@ export const ContentWrapper = styled.section`
           width: 6rem;
           height: 6rem;
           object-fit: contain;
+        }
+      }
+    }
+  }
+
+  @media only screen and (width < 768px) {
+    width: 90%;
+    gap: .5rem;
+    user-select: none;
+
+    .atropos {
+      width: 8rem;
+      height: 8rem;
+      flex: 1 1 10rem;
+
+      .atropos-scale {
+        width: 10rem;
+        height: 100%;
+
+        .atropos-rotate {
+          img {
+            width: 5rem;
+            height: 5rem;
+          }
         }
       }
     }

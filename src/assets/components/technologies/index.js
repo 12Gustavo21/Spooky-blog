@@ -21,6 +21,7 @@ export default function Cards({ tech }) {
         <Atropos
           data-aos="fade-up"
           data-aos-duration="2000"
+          data-aos-anchor-placement="top-bottom"
           key={index}
           rotateXMax={18}
           rotateYMax={18}

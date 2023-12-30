@@ -189,7 +189,7 @@ const glow = keyframes`
     }
 `;
 
-export const stars = styled.div`
+export const stars = styled.ul`
     width: 100%;
     height: 100%;
     position: relative;

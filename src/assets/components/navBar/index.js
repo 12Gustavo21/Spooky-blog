@@ -1,33 +1,33 @@
-import React from 'react';
+import React from "react";
 
 //React router dom
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //Styles
-import * as S from './style';
+import * as S from "./style";
 
 export default function index() {
     return (
         <>
-            <S.Nav>
-                <S.List>
-                    <Link to="/">
-                        <S.Item>Home</S.Item>
-                    </Link>
-                    <Link to="/about">
-                        <S.Item>About</S.Item>
-                    </Link>
-                    <Link to="/techStack">
-                        <S.Item>Tech Stack</S.Item>
-                    </Link>
-                    <Link to="/projects">
-                        <S.Item>Projects</S.Item>
-                    </Link>
-                    <Link to="/contact">
-                        <S.Item>Contact</S.Item>
-                    </Link>
-                </S.List>
-            </S.Nav>
+        <S.Nav>
+            <S.List>
+            <S.Item>
+                <Link to="/">Home</Link>
+            </S.Item>
+            <S.Item>
+                <Link to="/about">About</Link>
+            </S.Item>
+            <S.Item>
+                <Link to="/techStack">Tech Stack</Link>
+            </S.Item>
+            <S.Item>
+                <Link to="/projects">Projects</Link>
+            </S.Item>
+            <S.Item>
+                <Link to="/contact">Contact</Link>
+            </S.Item>
+            </S.List>
+        </S.Nav>
         </>
-    )
+    );
 }

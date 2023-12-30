@@ -84,7 +84,7 @@ export default function Header() {
                         <Menu />
                     </S.MenuBox>
                     <S.AudioBox>
-                        <button onClick={toggleSound} className={isPlaying ? 'active' : ''}>
+                        <button onClick={toggleSound} className={isPlaying ? 'active' : ''} title='Toggle sound'>
                             {isPlaying ? <MdMusicOff size={30} /> : <MdMusicNote size={30} />}
                         </button>
                     </S.AudioBox>
