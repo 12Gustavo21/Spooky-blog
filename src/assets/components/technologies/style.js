@@ -23,7 +23,12 @@ export const ContentWrapper = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 11, 29, 0.7);
+      //radial gradient
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(25, 25, 25, 0.9) 0%,
+        rgba(0, 11, 29, 0.7)  60%
+      );
       border-radius: 1.5rem;
 
       .atropos-rotate {
