@@ -5,13 +5,7 @@ import Cave from "../../gifs/cave.gif";
 export const Main = styled.main`
   width: 100%;
   height: 100vh;
-  background-color: #0b1418;
-`;
-
-export const ContentWrapper = styled.section`
-  width: 100%;
-  height: 100%;
-  background: url(${Cave}) no-repeat center center/contain;
+  background: url(${Cave}) no-repeat center/cover;
   position: relative;
   z-index: 0;
 
@@ -22,4 +16,13 @@ export const ContentWrapper = styled.section`
     background: rgba(0, 10, 16, 0.7);
     z-index: 1;
   }
+
+  @media only screen and (width <= 768px) {
+    background-position: -20rem 0;
+  }
+`;
+
+export const ContentWrapper = styled.section`
+  width: 100%;
+  height: 100%;
 `;

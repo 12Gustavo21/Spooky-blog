@@ -11,8 +11,8 @@ export default function index() {
     return (
         <>
         <Layout backgroundFooter="#060d11">
-            <BatComponent numberOfBats={6} />
             <S.Main>
+            <BatComponent numberOfBats={10} />
             <S.ContentWrapper></S.ContentWrapper>
             </S.Main>
         </Layout>
