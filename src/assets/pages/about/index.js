@@ -114,7 +114,7 @@ function Index() {
 
     return (
         <Layout backgroundHeader="#070c11" backgroundFooter="#070c11" >
-            <S.Main>
+            <S.Main background={about.backgroud.url}>
                 <FireflyCanvas />
                 <S.ContentWrapper>
                     <AboutSection about={about} />

@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-//Assets
-import darkForest from '../../img/dark-forest.png';
-
 /*
     Palette:
     #454545
@@ -15,7 +12,7 @@ import darkForest from '../../img/dark-forest.png';
 export const Main = styled.main`
     width: 100%;
     min-height: 100vh;
-    background: url(${darkForest}) no-repeat center/cover;
+    background: url(${props => props.background}) no-repeat center/cover;
     position: relative;
     z-index: 0;
 
