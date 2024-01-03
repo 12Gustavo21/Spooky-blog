@@ -1,21 +1,58 @@
-import React from "react";
-
-//Components
-import Layout from "../../components/layout";
-import BatComponent from "../../components/bats";
+import React, { Suspense, lazy, useEffect } from "react";
 
 //Styles
 import * as S from "./style";
 
-export default function index() {
-    return (
-        <>
-        <Layout backgroundFooter="#060d11">
-            <S.Main>
-            <BatComponent numberOfBats={10} />
-            <S.ContentWrapper></S.ContentWrapper>
-            </S.Main>
-        </Layout>
-        </>
-    );
+//Apollo
+import { useQuery } from "@apollo/client";
+
+//Services
+import PROJECTS_QUERY from "../../services/querys/projectsQuery";
+
+//AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+//Components
+import Layout from "../../components/layout";
+import BatComponent from "../../components/bats";
+import Loading from "../../components/loading";
+const Cards = lazy(() => import("../../components/projectCard"));
+
+export default function Index() {
+  useEffect(() => {
+    AOS.init();
+  });
+
+  const { data, loading, error } = useQuery(PROJECTS_QUERY);
+
+  if (loading) return <Loading />;
+  if (error) return <p>Error :(</p>;
+
+  const projects = data.project;
+
+  return (
+    <>
+      <Layout backgroundFooter="#060d11">
+        <S.Main background={projects.background.url}>
+          <BatComponent numberOfBats={10} />
+          <S.ContentWrapper>
+            <section>
+              <div data-aos="fade-up" data-aos-duration="1500">
+                <h1>{projects.title}</h1>
+              </div>
+              <div data-aos="fade-up" data-aos-duration="1750">
+                <p>{projects.description}</p>
+              </div>
+            </section>
+            <section>
+              <Suspense fallback={<p>Loading...</p>}>
+                <Cards project={projects} />
+              </Suspense>
+            </section>
+          </S.ContentWrapper>
+        </S.Main>
+      </Layout>
+    </>
+  );
 }

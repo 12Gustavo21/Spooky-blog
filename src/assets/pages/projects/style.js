@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
-import Cave from "../../gifs/cave.gif";
-
 export const Main = styled.main`
   width: 100%;
   height: 100vh;
-  background: url(${Cave}) no-repeat center/cover;
+  background: url(${(props) => props.background}) no-repeat center/cover;
   position: relative;
   z-index: 0;
 
@@ -25,4 +23,6 @@ export const Main = styled.main`
 export const ContentWrapper = styled.section`
   width: 100%;
   height: 100%;
+  z-index: 2;
+  position: relative;
 `;

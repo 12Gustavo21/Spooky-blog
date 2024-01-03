@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 //Styles
-import * as S from './style';
+import * as S from "./style";
 
 const Starfield = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     const width = (canvas.width = window.innerWidth);
     const height = (canvas.height = window.innerHeight);
     const stars = [];
@@ -108,7 +108,9 @@ const Starfield = () => {
         0,
         0
       );
-      shootingStar.setSpeed(randomRange(shootingStarSpeed.min, shootingStarSpeed.max));
+      shootingStar.setSpeed(
+        randomRange(shootingStarSpeed.min, shootingStarSpeed.max)
+      );
       shootingStar.setHeading(degreesToRads(starsAngle));
       shootingStar.radius = shootingStarRadius;
       shootingStar.opacity = 0;
@@ -127,7 +129,7 @@ const Starfield = () => {
     function update() {
       if (!paused) {
         context.clearRect(0, 0, width, height);
-        context.fillStyle = '#050930';
+        context.fillStyle = "#050930";
         context.fillRect(0, 0, width, height);
         context.fill();
 
@@ -183,7 +185,7 @@ const Starfield = () => {
     }
 
     function drawStar(star) {
-      context.fillStyle = 'rgb(210, 150, 50)';
+      context.fillStyle = "rgb(210, 150, 50)";
       context.beginPath();
       context.arc(star.x, star.y, star.radius, 0, Math.PI * 2, false);
       context.fill();
@@ -195,7 +197,7 @@ const Starfield = () => {
         currentTrailLength = maxTrailLength * p.trailLengthDelta,
         pos = lineToAngle(x, y, -currentTrailLength, p.getHeading());
 
-      context.fillStyle = 'rgba(255, 255, 255, ' + p.opacity + ')';
+      context.fillStyle = "rgba(255, 255, 255, " + p.opacity + ")";
       const starLength = 5;
       context.beginPath();
       context.moveTo(x - 1, y + 1);
@@ -219,7 +221,7 @@ const Starfield = () => {
       context.fill();
 
       //trail
-      context.fillStyle = 'rgba(210, 150, 50, ' + p.opacity + ')';
+      context.fillStyle = "rgba(210, 150, 50, " + p.opacity + ")";
       context.beginPath();
       context.moveTo(x - 1, y - 1);
       context.lineTo(pos.x, pos.y);
@@ -249,7 +251,10 @@ const Starfield = () => {
   return (
     <>
       <S.CanvasContainer>
-        <canvas ref={canvasRef} style={{ display: 'block', width: '100%', height: '100%' }} />
+        <canvas
+          ref={canvasRef}
+          style={{ display: "block", width: "100%", height: "100%" }}
+        />
       </S.CanvasContainer>
     </>
   );

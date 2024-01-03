@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
-
-//Styles
 import * as S from "./style";
-
-//Atropos
 import Atropos from "atropos/react";
-
-//AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -34,13 +28,16 @@ export default function Cards({ tech }) {
                 rel="noopener noreferrer"
               >
                 <div className="atropos-rotate">
-                  <div className="atropos-inner">
+                  <div
+                    className="atropos-inner"
+                    data-atropos-offset="3"
+                    style={{ transition: "transform 0.3s ease-out" }}
+                  >
                     <img
                       src={technology.technologyImage}
                       alt={technology.name}
                       title={technology.name}
-                      width={50}
-                      data-atropos-offset="3"
+                      className="atropos-image"
                     />
                   </div>
                 </div>

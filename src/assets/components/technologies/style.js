@@ -23,11 +23,10 @@ export const ContentWrapper = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
-      //radial gradient
       background: radial-gradient(
         circle at 50% 50%,
         rgba(25, 25, 25, 0.9) 0%,
-        rgba(0, 11, 29, 0.7)  60%
+        rgba(0, 11, 29, 0.7) 60%
       );
       border-radius: 1.5rem;
 
@@ -48,7 +47,7 @@ export const ContentWrapper = styled.section`
 
   @media only screen and (width < 768px) {
     width: 90%;
-    gap: .5rem;
+    gap: 0.5rem;
     user-select: none;
 
     .atropos {

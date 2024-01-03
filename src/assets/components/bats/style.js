@@ -8,11 +8,11 @@ export const BatsWrapper = styled.section`
   user-select: none;
 
   figure {
-    position: absolute;
+    position: fixed;
     width: 100px;
     height: 100px;
     opacity: 0;
-    filter: invert(.3);
+    filter: invert(0.3);
     z-index: 1;
   }
 `;

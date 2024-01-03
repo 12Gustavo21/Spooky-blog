@@ -31,7 +31,7 @@ export const ABOUT_QUERY = gql`
           url
         }
       }
-      backgroud {
+      background {
         url
       }
     }

@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 //Style
-import * as S from './style';
+import * as S from "./style";
 
 const getRandomPosition = (min, max) => Math.random() * (max - min) + min;
 
 const getRandomSpeed = () => (Math.random() - 0.5) * 2;
 
 const FireflyCanvas = () => {
-  const [fireflies, setFireflies] = useState(Array.from({ length: 40 }, createFirefly));
+  const [fireflies, setFireflies] = useState(
+    Array.from({ length: 40 }, createFirefly)
+  );
 
   function createFirefly() {
     return {
@@ -28,7 +30,7 @@ const FireflyCanvas = () => {
             x: firefly.x + firefly.speedX,
             y: firefly.y + firefly.speedY,
           };
-  
+
           if (
             updatedFirefly.x < 0 ||
             updatedFirefly.x > window.innerWidth ||
@@ -37,7 +39,7 @@ const FireflyCanvas = () => {
           ) {
             return createFirefly();
           }
-  
+
           return updatedFirefly;
         })
       );
@@ -54,7 +56,10 @@ const FireflyCanvas = () => {
   return (
     <S.CanvasContainer>
       {fireflies.map((firefly, index) => (
-        <S.Firefly key={index} style={{ top: `${firefly.y}px`, left: `${firefly.x}px` }} />
+        <S.Firefly
+          key={index}
+          style={{ top: `${firefly.y}px`, left: `${firefly.x}px` }}
+        />
       ))}
     </S.CanvasContainer>
   );

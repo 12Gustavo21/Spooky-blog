@@ -1,10 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 export const CanvasContainer = styled.div`
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 `;
 
 export const fadeInOut = keyframes`
@@ -17,10 +17,10 @@ export const fadeInOut = keyframes`
 `;
 
 export const Firefly = styled.div`
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: #f8e71c;
-    border-radius: 50%;
-    animation: ${fadeInOut} 2s infinite;
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background-color: #f8e71c;
+  border-radius: 50%;
+  animation: ${fadeInOut} 2s infinite;
 `;
