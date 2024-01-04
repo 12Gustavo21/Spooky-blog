@@ -15,7 +15,7 @@ export const ContentWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 1 15rem;
+    flex: 2 2 17rem;
 
     .atropos-scale {
       width: 11rem;
@@ -48,7 +48,6 @@ export const ContentWrapper = styled.section`
   @media only screen and (width < 768px) {
     width: 90%;
     gap: 0.5rem;
-    user-select: none;
 
     .atropos {
       width: 8rem;
