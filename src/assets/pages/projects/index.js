@@ -37,19 +37,19 @@ export default function Index() {
         <S.Main background={projects.background.url}>
           <BatComponent numberOfBats={10} />
           <S.ContentWrapper>
-            <section>
-              <div data-aos="fade-up" data-aos-duration="1500">
+            <S.ProjectsTitle>
+              <S.TitleWrapper data-aos="fade-up" data-aos-duration="1500">
                 <h1>{projects.title}</h1>
-              </div>
-              <div data-aos="fade-up" data-aos-duration="1750">
+              </S.TitleWrapper>
+              <S.DescriptionWrapper data-aos="fade-up" data-aos-duration="1750">
                 <p>{projects.description}</p>
-              </div>
-            </section>
-            <section>
+              </S.DescriptionWrapper>
+            </S.ProjectsTitle>
+            <S.CardsWrapper>
               <Suspense fallback={<p>Loading...</p>}>
                 <Cards project={projects} />
               </Suspense>
-            </section>
+            </S.CardsWrapper>
           </S.ContentWrapper>
         </S.Main>
       </Layout>

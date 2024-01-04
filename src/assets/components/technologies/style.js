@@ -15,7 +15,7 @@ export const ContentWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 2 2 17rem;
+    flex: 1 1 19.88rem;
 
     .atropos-scale {
       width: 11rem;
