@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 40vw;
+  width: 40rem;
   height: 20rem;
   border-radius: 1.25rem;
   background: #0f1927;
   box-shadow: 0.125rem 0.125rem 6.25rem 0 rgba(0, 0, 0, 0.2);
+
+  @media only screen and (width <= 680px) {
+    width: 100%;
+    height: 15rem;
+  }
 `;
 
 export const CardWrapper = styled.div`

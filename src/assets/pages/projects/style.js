@@ -69,4 +69,8 @@ export const CardsWrapper = styled.section`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  @media only screen and (width <= 768px) {
+    padding: 0 1rem;
+  }
 `;
