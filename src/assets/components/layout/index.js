@@ -2,6 +2,7 @@ import React from 'react';
 
 //Components
 import Footer from '../footer';
+import ToTopButton from '../goToTop';
 
 //Helmet
 import { Helmet } from 'react-helmet';
@@ -9,7 +10,7 @@ import { Helmet } from 'react-helmet';
 //User Location
 import { useLocation } from 'react-router-dom';
 
-export default function Index({ children, positionHeader, backgroundHeader, positionFooter, backgroundFooter }) {
+export default function Index({ children, positionFooter, backgroundFooter }) {
 
     const SetTitle = () => {
         const path = useLocation().pathname;
@@ -31,6 +32,7 @@ export default function Index({ children, positionHeader, backgroundHeader, posi
                 <title>{SetTitle()}</title>
             </Helmet>
             {children}
+            <ToTopButton />
             <Footer positionFooter={positionFooter} backgroundFooter={backgroundFooter} />
         </>
     )
