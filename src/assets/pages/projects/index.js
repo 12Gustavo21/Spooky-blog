@@ -17,6 +17,7 @@ import "aos/dist/aos.css";
 import Layout from "../../components/layout";
 import BatComponent from "../../components/bats";
 import Loading from "../../components/loading";
+import LoadingSpinner from "../../components/loadingSpinner";
 const Cards = lazy(() => import("../../components/projectCard"));
 
 export default function Index() {
@@ -46,7 +47,7 @@ export default function Index() {
               </S.DescriptionWrapper>
             </S.ProjectsTitle>
             <S.CardsWrapper>
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense fallback={<LoadingSpinner />}>
                 <Cards project={projects} />
               </Suspense>
             </S.CardsWrapper>

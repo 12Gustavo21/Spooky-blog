@@ -17,6 +17,7 @@ import "aos/dist/aos.css";
 import Layout from "../../components/layout";
 import Loading from "../../components/loading";
 import Starfield from "../../components/nightBackground";
+import LoadingSpinner from "../../components/loadingSpinner";
 const Technologies = lazy(() => import("../../components/technologies"));
 
 export default function Index() {
@@ -46,7 +47,7 @@ export default function Index() {
               <p>{tech.description}</p>
             </S.DescriptionWrapper>
           </S.ContentWrapper>
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Technologies tech={tech} />
           </Suspense>
         </S.Main>
