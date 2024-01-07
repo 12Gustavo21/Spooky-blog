@@ -13,6 +13,9 @@ import * as S from "./style";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//Pages
+import Error from "../error"
+
 //Components
 import Layout from "../../components/layout";
 import Loading from "../../components/loading";
@@ -28,7 +31,7 @@ export default function Index() {
   const { data, loading, error } = useQuery(TECH_QUERY);
 
   if (loading) return <Loading />;
-  if (error) return <p>Error :(</p>;
+  if (error) return <Error />;
 
   const tech = data.techStack;
 

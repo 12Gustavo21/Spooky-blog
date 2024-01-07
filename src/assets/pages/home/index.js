@@ -19,6 +19,9 @@ import { Helmet } from 'react-helmet';
 //User Location
 import { useLocation } from 'react-router-dom';
 
+//Pages
+import Error from "../error"
+
 //Components
 import Layout from '../../components/layout';
 import Loading from '../../components/loading';
@@ -46,7 +49,7 @@ export default function Home() {
     const { data, loading, error } = useQuery(HOME_QUERY);
 
     if (loading) return <Loading />;
-    if (error) return <p>Error :(</p>;
+    if (error) return <Error />;
 
     console.log(data);
 
