@@ -1,7 +1,17 @@
-import React from 'react'
+import { gql } from "@apollo/client";
 
-export default function index() {
-    return (
-        <>contactQuery</>
-    )
-}
+export const CONTACT_QUERY = gql`
+  query {
+    contact(where: { slug: "contact" }) {
+      title
+      description {
+        text
+      }
+      background {
+        url
+      }
+    }
+  }
+`;
+
+export default CONTACT_QUERY;
