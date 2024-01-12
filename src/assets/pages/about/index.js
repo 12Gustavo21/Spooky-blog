@@ -135,7 +135,7 @@ function Index() {
   const { about } = data;
 
   return (
-    <Layout backgroundHeader="#070c11" backgroundFooter="#070c11">
+    <Layout backgroundFooter="#070c11">
       <S.Main background={about.background.url}>
         <FireflyCanvas />
         <S.ContentWrapper>

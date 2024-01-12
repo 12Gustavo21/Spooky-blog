@@ -78,51 +78,66 @@ export default function Index() {
       <S.Main>
         <S.ContentWrapper>
           <S.ContactWrapper>
-            <div>
+            <S.TitleWrapper>
               <h1>{contact.title}</h1>
-            </div>
-            <section>
+            </S.TitleWrapper>
+            <S.DescriptionWrapper>
               <p
                 dangerouslySetInnerHTML={{
                   __html: contact.description.text.replace(/\\n/g, ""),
                 }}
               ></p>
-            </section>
+            </S.DescriptionWrapper>
           </S.ContactWrapper>
-          <S.FormContact onSubmit={() => {}}>
-            <input
-              className="input"
-              type="text"
-              placeholder="Digite seu nome"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              required
-            />
+          <S.Conatiner>
+            <S.GhostContainer>
+              <S.Ghost>
+                <S.GhostFace class="ghost-face">
+                  <div class="ghost-eyes">
+                    <div class="ghost-eyes-l"></div>
+                    <div class="ghost-eyes-r"></div>
+                  </div>
+                  <div class="ghost-mouth"></div>
+                </S.GhostFace>
+                <S.GhostTorso class="ghost-torso"></S.GhostTorso>
+              </S.Ghost>
+              <S.GhostHands class="ghost-hands">
+                <div class="ghost-hands-l"></div>
+                <div class="ghost-hands-r"></div>
+              </S.GhostHands>
+            </S.GhostContainer>
+            <S.FormContact>
+              <input
+                className="input"
+                type="text"
+                placeholder="Digite seu nome"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                required
+              />
 
-            <input
-              className="input"
-              type="text"
-              placeholder="Digite seu email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-            />
+              <input
+                className="input"
+                type="text"
+                placeholder="Digite seu email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+              />
 
-            <textarea
-              className="textarea"
-              placeholder="Digite sua mensagem..."
-              onChange={(e) => setMessage(e.target.value)}
-              value={message}
-              required
-            />
+              <textarea
+                className="textarea"
+                placeholder="Digite sua mensagem..."
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+                required
+              />
 
-            <input
-              className="button"
-              type="submit"
-              value="Enviar"
-              onClick={sendEmail}
-            />
-          </S.FormContact>
+              <button className="button" type="submit" onClick={sendEmail}>
+                <span>Send</span>
+              </button>
+            </S.FormContact>
+          </S.Conatiner>
         </S.ContentWrapper>
       </S.Main>
     </Layout>

@@ -37,7 +37,7 @@ export default function Cards({ tech }) {
                       src={technology.technologyImage}
                       alt={technology.name}
                       title={technology.name}
-                      className="atropos-image"
+                      loading="lazy"
                     />
                   </div>
                 </div>
