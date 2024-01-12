@@ -20,6 +20,10 @@ export const Main = styled.main`
   justify-content: center;
   align-items: center;
   background: #0a0b0c;
+
+  @media only screen and (width <= 600px) {
+    padding: 6rem 0 0 0;
+  }
 `;
 
 export const ContentWrapper = styled.section`
@@ -46,8 +50,12 @@ export const ContactWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  z-index: 2;
+  z-index: 0;
   gap: 1rem;
+
+  @media only screen and (width <= 600px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -58,6 +66,10 @@ export const TitleWrapper = styled.div`
   align-items: center;
   font: 400 4rem/3rem "Amatic SC", sans-serif;
   color: #ff6000;
+
+  @media only screen and (width <= 600px) {
+    font-size: 3rem;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -68,8 +80,12 @@ export const DescriptionWrapper = styled.div`
 `;
 
 export const Conatiner = styled.div`
+  animation: ${float} 3s infinite alternate;
 
-animation: ${float} 3s infinite alternate;
+  @media only screen and (width <= 600px) {
+    position: relative;
+    top: 1rem;
+  }
 `;
 
 export const FormContact = styled.form`
@@ -97,12 +113,12 @@ export const FormContact = styled.form`
     font: 400 1rem "Poppins", sans-serif;
     transition: all 0.3s ease-in-out;
     caret-color: #ff6000;
-    
+
     &:focus {
       background: white;
       outline: #ff6000 solid 0.1rem;
     }
-    
+
     &::placeholder {
       color: rgba(0, 0, 0, 0.5);
     }
@@ -158,11 +174,15 @@ export const FormContact = styled.form`
       transform: translateY(-0.25rem);
     }
   }
+
+  @media only screen and (width <= 600px) {
+    width: 100%;
+  }
 `;
 
 export const GhostContainer = styled.div`
   position: relative;
-  bottom: .5rem;
+  bottom: 0.5rem;
 `;
 
 export const Ghost = styled.div`
@@ -188,8 +208,8 @@ export const GhostFace = styled.div`
   .ghost-eyes {
     .ghost-eyes-l,
     .ghost-eyes-r {
-      width: .8em;
-      height: .8em;
+      width: 0.8em;
+      height: 0.8em;
       background: ${bg};
       border-radius: 100%;
       position: absolute;
@@ -206,14 +226,14 @@ export const GhostFace = styled.div`
 
   .ghost-mouth {
     width: 1em;
-    height: .6em;
+    height: 0.6em;
     border-radius: 50px;
     border: 0.2em solid ${bg};
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     position: relative;
-    top: .5rem;
+    top: 0.5rem;
 
     &--open {
       border-top: 0.2em solid ${bg};
@@ -244,14 +264,22 @@ export const GhostHands = styled.div`
     height: 1.5em;
     background: white;
     box-shadow: 0 4px 4px rgba(51, 51, 51, 0.3);
-    top: -.1rem;
+    top: -0.1rem;
     position: absolute;
   }
 
   .ghost-hands-r {
     transform: translateX(17em) rotate(15deg);
+
+    @media only screen and (width <= 600px) {
+      transform: translateX(10em) rotate(15deg);
+    }
   }
   .ghost-hands-l {
     transform: translateX(12em) rotate(-15deg);
+
+    @media only screen and (width <= 600px) {
+      transform: translateX(5.5em) rotate(-15deg);
+    }
   }
 `;
