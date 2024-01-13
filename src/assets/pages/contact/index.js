@@ -87,7 +87,7 @@ export default function Index() {
   );
 
   return (
-    <Layout positionFooter="absolute">
+    <Layout positionFooter="fixed">
       <S.CanvasWrapper>
         <Ghost background={contact.background.url} />
       </S.CanvasWrapper>
