@@ -6,7 +6,7 @@ import Loading from "../../components/loading";
 import Ghost from "../../components/ghost";
 
 //Pages
-import Error from "../error";
+import Error from "../error500";
 
 //EmailJs
 import emailjs from "@emailjs/browser";
@@ -24,6 +24,7 @@ export default function Index() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [focus, setFocus] = useState(false);
 
   const send = document.querySelector(".button");
 
@@ -52,6 +53,7 @@ export default function Index() {
         (response) => {
           send.classList.add("success");
           console.log("SUCCESS!", response.status, response.text);
+          alert("Email enviado com sucesso!");
           setName("");
           setEmail("");
           setMessage("");
@@ -69,6 +71,20 @@ export default function Index() {
   if (error) return <Error />;
 
   const { contact } = data;
+
+  const handleFocus = () => {
+    if (!focus) {
+      setFocus(true);
+    }
+  };
+  
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("row")) return;
+    else {
+      setFocus(false);
+    }
+  }
+  );
 
   return (
     <Layout positionFooter="absolute">
@@ -89,47 +105,65 @@ export default function Index() {
               ></p>
             </S.DescriptionWrapper>
           </S.ContactWrapper>
-          <S.Conatiner>
+          <S.Container>
             <S.GhostContainer>
-              <S.Ghost>
-                <S.GhostFace class="ghost-face">
-                  <div class="ghost-eyes">
-                    <div class="ghost-eyes-l"></div>
-                    <div class="ghost-eyes-r"></div>
+              <S.Ghost onFocus={handleFocus} className={focus ? "focus" : ""}>
+                <S.GhostFace className="ghost-face">
+                  <div
+                    onFocus={handleFocus}
+                    className={`ghost-eyes ${focus ? "focus" : ""}`}
+                  >
+                    <div className="ghost-eyes-l"></div>
+                    <div className="ghost-eyes-r"></div>
                   </div>
-                  <div class="ghost-mouth"></div>
+                  <div className="ghost-mouth"></div>
                 </S.GhostFace>
-                <S.GhostTorso class="ghost-torso"></S.GhostTorso>
+                <S.GhostTorso
+                  onFocus={handleFocus}
+                  className={`ghost-torso ${focus ? "focus" : ""}`}
+                ></S.GhostTorso>
+                <S.GhostHands
+                  onFocus={handleFocus}
+                  className={`ghost-hands ${focus ? "focus" : ""}`}
+                >
+                  <div
+                    onFocus={handleFocus}
+                    className={`ghost-hands-l ${focus ? "focus" : ""}`}
+                  ></div>
+                  <div
+                    onFocus={handleFocus}
+                    className={`ghost-hands-r ${focus ? "focus" : ""}`}
+                  ></div>
+                </S.GhostHands>
               </S.Ghost>
-              <S.GhostHands class="ghost-hands">
-                <div class="ghost-hands-l"></div>
-                <div class="ghost-hands-r"></div>
-              </S.GhostHands>
             </S.GhostContainer>
             <S.FormContact>
               <input
-                className="input"
+                className="input row"
                 type="text"
-                placeholder="Digite seu nome"
+                placeholder="Your name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                onFocus={handleFocus}
                 required
-              />
+                />
 
               <input
-                className="input"
+                className="input row"
                 type="text"
-                placeholder="Digite seu email"
+                placeholder="Your most spooky email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                onFocus={handleFocus}
                 required
-              />
+                />
 
               <textarea
-                className="textarea"
-                placeholder="Digite sua mensagem..."
+                className="textarea row"
+                placeholder="Tell me a spooky thing..."
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
+                onFocus={handleFocus}
                 required
               />
 
@@ -137,7 +171,7 @@ export default function Index() {
                 <span>Send</span>
               </button>
             </S.FormContact>
-          </S.Conatiner>
+          </S.Container>
         </S.ContentWrapper>
       </S.Main>
     </Layout>

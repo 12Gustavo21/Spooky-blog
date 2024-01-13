@@ -21,7 +21,7 @@ export const Main = styled.main`
   align-items: center;
   background: #0a0b0c;
 
-  @media only screen and (width <= 600px) {
+  @media only screen and (width <= 650px) {
     padding: 6rem 0 0 0;
   }
 `;
@@ -53,7 +53,7 @@ export const ContactWrapper = styled.div`
   z-index: 0;
   gap: 1rem;
 
-  @media only screen and (width <= 600px) {
+  @media only screen and (width <= 650px) {
     gap: 0.5rem;
   }
 `;
@@ -67,7 +67,7 @@ export const TitleWrapper = styled.div`
   font: 400 4rem/3rem "Amatic SC", sans-serif;
   color: #ff6000;
 
-  @media only screen and (width <= 600px) {
+  @media only screen and (width <= 650px) {
     font-size: 3rem;
   }
 `;
@@ -79,12 +79,41 @@ export const DescriptionWrapper = styled.div`
   color: #ffa559;
 `;
 
-export const Conatiner = styled.div`
+export const Container = styled.div`
   animation: ${float} 3s infinite alternate;
 
-  @media only screen and (width <= 600px) {
+  @media only screen and (width <= 650px) {
     position: relative;
     top: 1rem;
+  }
+
+  .focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: transparent;
+    .ghost-torso {
+      transform: translate(-50%, 42px) scaleY(0.9);
+    }
+    .ghost-eyes {
+      .ghost-eyes-l,
+      .ghost-eyes-r {
+        background: rgba(255, 255, 255, 0.6);
+      }
+    }
+    .ghost-face {
+      transform: translate(-50%, 0.4em);
+    }
+    .ghost-mouth {
+      transform: scaleY(0.6);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+    .ghost-hands {
+      transform: translate(-50%, 0.2em);
+
+      .ghost-hands-l,
+      .ghost-hands-r {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
   }
 `;
 
@@ -97,15 +126,13 @@ export const FormContact = styled.form`
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  position: relative;
   backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(34, 39, 42, 0.75);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-  z-index: 2;
 
   .input {
-    width: 14.5rem;
+    width: 95%;
     padding: 1em;
     border: none;
     border-radius: 0.2em;
@@ -125,7 +152,7 @@ export const FormContact = styled.form`
   }
 
   .textarea {
-    width: 14.5rem;
+    width: 95%;
     height: 5rem;
     min-height: 5rem;
     max-height: 8rem;
@@ -175,7 +202,7 @@ export const FormContact = styled.form`
     }
   }
 
-  @media only screen and (width <= 600px) {
+  @media only screen and (width <= 650px) {
     width: 100%;
   }
 `;
@@ -234,11 +261,6 @@ export const GhostFace = styled.div`
     border-top-right-radius: 0;
     position: relative;
     top: 0.5rem;
-
-    &--open {
-      border-top: 0.2em solid ${bg};
-      height: 0.2em;
-    }
   }
 `;
 
@@ -264,22 +286,14 @@ export const GhostHands = styled.div`
     height: 1.5em;
     background: white;
     box-shadow: 0 4px 4px rgba(51, 51, 51, 0.3);
-    top: -0.1rem;
+    top: -0.15rem;
     position: absolute;
   }
 
   .ghost-hands-r {
-    transform: translateX(17em) rotate(15deg);
-
-    @media only screen and (width <= 600px) {
-      transform: translateX(10em) rotate(15deg);
-    }
+    transform: translateX(2em) rotate(15deg);
   }
   .ghost-hands-l {
-    transform: translateX(12em) rotate(-15deg);
-
-    @media only screen and (width <= 600px) {
-      transform: translateX(5.5em) rotate(-15deg);
-    }
+    transform: translateX(-3em) rotate(-15deg);
   }
 `;

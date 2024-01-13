@@ -14,7 +14,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 //Pages
-import Error from "../error"
+import Error from "../error500";
 
 //Components
 import Layout from "../../components/layout";
