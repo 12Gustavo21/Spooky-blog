@@ -53,7 +53,7 @@ export default function Index() {
         (response) => {
           send.classList.add("success");
           console.log("SUCCESS!", response.status, response.text);
-          alert("Email enviado com sucesso!");
+          alert("Your spooky message has been sent");
           setName("");
           setEmail("");
           setMessage("");
