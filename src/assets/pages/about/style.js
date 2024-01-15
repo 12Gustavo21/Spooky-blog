@@ -29,11 +29,11 @@ export const Main = styled.main`
     z-index: 1;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     background-size: 160vw;
   }
 
-  @media only screen and (width <= 500px) {
+  @media only screen and (max-width: 500px) {
     background-size: 200vw;
   }
 `;
@@ -64,7 +64,7 @@ export const AboutWrapper = styled.section`
   position: relative;
   z-index: 2;
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -75,11 +75,11 @@ export const AboutTitleDivision = styled.div`
   font: 400 4rem/3rem "Amatic SC", sans-serif;
   color: #ff6000;
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 3rem;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -91,7 +91,7 @@ export const AboutTextDivision = styled.div`
   color: #ffa559;
   word-break: break-word;
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 1rem;
   }
 `;
@@ -105,7 +105,7 @@ export const WorkWrapper = styled.section`
   position: relative;
   z-index: 2;
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -116,7 +116,7 @@ export const WorkTitleDivision = styled.div`
   font: 400 3rem/3rem "Amatic SC", sans-serif;
   color: #ff6000;
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 2rem;
   }
 `;
@@ -126,11 +126,11 @@ export const WorkDivision = styled.div`
   height: 60%;
   font: 400 1.125rem/1.625rem "Poppins", sans-serif;
 
-  @media only screen and (width <= 1350px) {
+  @media only screen and (max-width: 1350px) {
     width: 90%;
   }
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 1rem;
   }
 `;
@@ -155,11 +155,11 @@ export const WorkTitleBox = styled.div`
   font: 400 1.5rem/2rem "Poppins", sans-serif;
   color: #f67e2b;
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 1rem;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     margin: 0.2rem 0;
   }
 `;
@@ -177,18 +177,18 @@ export const WorkDescriptionBox = styled.div`
     width: 1.2rem;
   }
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 0.9rem;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
-  @media only screen and (width <= 375px) {
+  @media only screen and (max-width: 375px) {
     font-size: 0.83rem;
   }
 `;
@@ -206,7 +206,7 @@ export const WorkDateBox = styled.div`
   align-items: center;
   gap: 1rem;
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -220,7 +220,7 @@ export const EducationWrapper = styled.section`
   position: relative;
   z-index: 2;
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -231,11 +231,11 @@ export const EducationTitleDivision = styled.div`
   font: 400 3rem/3rem "Amatic SC", sans-serif;
   color: #ff6000;
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 2rem;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -245,11 +245,11 @@ export const EducationDivision = styled.div`
   height: 60%;
   font: 400 1.125rem/1.625rem "Poppins", sans-serif;
 
-  @media only screen and (width <= 1350px) {
+  @media only screen and (max-width: 1350px) {
     width: 90%;
   }
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 1rem;
   }
 `;
@@ -274,11 +274,11 @@ export const EducationTitleBox = styled.div`
   font: 400 1.5rem/2rem "Poppins", sans-serif;
   color: #f67e2b;
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 1rem;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     margin: 0.2rem 0;
   }
 `;
@@ -296,18 +296,18 @@ export const EducationDescriptionBox = styled.div`
     width: 1.2rem;
   }
 
-  @media only screen and (width <= 850px) {
+  @media only screen and (max-width: 850px) {
     font-size: 0.9rem;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
-  @media only screen and (width <= 375px) {
+  @media only screen and (max-width: 375px) {
     font-size: 0.83rem;
   }
 `;

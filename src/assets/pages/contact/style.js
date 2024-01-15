@@ -21,7 +21,7 @@ export const Main = styled.main`
   align-items: center;
   background: #0a0b0c;
 
-  @media only screen and (width <= 650px) {
+  @media only screen and (max-width: 650px) {
     padding: 6rem 0 0 0;
   }
 `;
@@ -53,7 +53,7 @@ export const ContactWrapper = styled.div`
   z-index: 0;
   gap: 1rem;
 
-  @media only screen and (width <= 650px) {
+  @media only screen and (max-width: 650px) {
     gap: 0.5rem;
   }
 `;
@@ -67,7 +67,7 @@ export const TitleWrapper = styled.div`
   font: 400 4rem/3rem "Amatic SC", sans-serif;
   color: #ff6000;
 
-  @media only screen and (width <= 650px) {
+  @media only screen and (max-width: 650px) {
     font-size: 3rem;
   }
 `;
@@ -82,7 +82,7 @@ export const DescriptionWrapper = styled.div`
 export const Container = styled.div`
   animation: ${float} 3s infinite alternate;
 
-  @media only screen and (width <= 650px) {
+  @media only screen and (max-width: 650px) {
     position: relative;
     top: 1rem;
   }
@@ -202,7 +202,7 @@ export const FormContact = styled.form`
     }
   }
 
-  @media only screen and (width <= 650px) {
+  @media only screen and (max-width: 650px) {
     width: 100%;
   }
 `;

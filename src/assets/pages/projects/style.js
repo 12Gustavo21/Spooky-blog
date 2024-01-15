@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Main = styled.main`
   width: 100%;
   min-height: 100vh;
-  background: url(${props => props.background}) #091318 no-repeat top/contain;
+  background: url(${(props) => props.background}) #091318 no-repeat top/contain;
   position: relative;
   z-index: 0;
 
@@ -15,7 +15,7 @@ export const Main = styled.main`
     z-index: 1;
   }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     background-size: 160vw;
   }
 `;
@@ -70,7 +70,7 @@ export const CardsWrapper = styled.section`
   align-items: center;
   gap: 2rem;
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     padding: 0 1rem;
   }
 `;

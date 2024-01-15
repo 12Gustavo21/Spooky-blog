@@ -56,9 +56,9 @@ export const CanvasContainer = styled.div`
     inset: 0;
     background: rgba(1, 1, 1, 0.6);
     z-index: 1;
-  }  
+  }
 
-  @media only screen and (width <= 768px) {
+  @media only screen and (max-width: 768px) {
     background-position: 80% 0;
   }
 `;
@@ -74,7 +74,7 @@ export const Ghost = styled.div`
   transform: rotate(-1.25deg);
   animation: ${turn} 8s infinite;
   opacity: 0.95;
-  
+
   &::after {
     content: "";
     position: absolute;
@@ -97,8 +97,8 @@ export const Ghost = styled.div`
     height: 0.625rem;
     background-color: #fff;
     border-radius: 624.9375rem;
-    box-shadow: 0.625rem 0 0 #2e3237, 1.25rem 0 0 #fff,
-      1.875rem 0 0 #2e3237, 2.5rem 0 0 #fff, 3.125rem 0 0 #2e3237;
+    box-shadow: 0.625rem 0 0 #2e3237, 1.25rem 0 0 #fff, 1.875rem 0 0 #2e3237,
+      2.5rem 0 0 #fff, 3.125rem 0 0 #2e3237;
     animation: ${skirt} 300ms infinite linear;
   }
 `;

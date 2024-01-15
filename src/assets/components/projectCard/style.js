@@ -7,7 +7,7 @@ export const Card = styled.div`
   background: #0f1927;
   box-shadow: 0.125rem 0.125rem 6.25rem 0 rgba(0, 0, 0, 0.2);
 
-  @media only screen and (width <= 680px) {
+  @media only screen and (max-width: 680px) {
     width: 100%;
     height: 15rem;
   }
