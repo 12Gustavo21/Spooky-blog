@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //Components
 import Layout from "../../components/layout";
@@ -20,11 +20,19 @@ import CONTACT_QUERY from "../../services/querys/contactQuery";
 //Style
 import * as S from "./style";
 
+//AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Index() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [focus, setFocus] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+  });
 
   const send = document.querySelector(".button");
 
@@ -77,14 +85,13 @@ export default function Index() {
       setFocus(true);
     }
   };
-  
+
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("row")) return;
     else {
       setFocus(false);
     }
-  }
-  );
+  });
 
   return (
     <Layout backgroundFooter="#0b0b0b">
@@ -94,10 +101,10 @@ export default function Index() {
       <S.Main>
         <S.ContentWrapper>
           <S.ContactWrapper>
-            <S.TitleWrapper>
+            <S.TitleWrapper data-aos="fade-up" data-aos-duration="1500">
               <h1>{contact.title}</h1>
             </S.TitleWrapper>
-            <S.DescriptionWrapper>
+            <S.DescriptionWrapper data-aos="fade-up" data-aos-duration="1750">
               <p
                 dangerouslySetInnerHTML={{
                   __html: contact.description.text.replace(/\\n/g, ""),
@@ -146,7 +153,7 @@ export default function Index() {
                 value={name}
                 onFocus={handleFocus}
                 required
-                />
+              />
 
               <input
                 className="input row"
@@ -156,7 +163,7 @@ export default function Index() {
                 value={email}
                 onFocus={handleFocus}
                 required
-                />
+              />
 
               <textarea
                 className="textarea row"
