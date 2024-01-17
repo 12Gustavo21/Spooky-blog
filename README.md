@@ -1,10 +1,10 @@
 # Spooky blog
 
-> Status : Unfinished project 🕰️ / Open PR
+> Status : Finished project ✅ / Open PR
 
 ## Personal portfolio
 
-<!--<img width ='800px' src ='src/img/spooky-blog.png' />-->
+<img width ='800px' src ='src/assets/img/home-print.png' />
 
 *Technologies*
 
