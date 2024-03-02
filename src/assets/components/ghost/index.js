@@ -8,7 +8,7 @@ const getRandomPosition = (min, max) => Math.random() * (max - min) + min;
 const getRandomSpeed = () => (Math.random() - 0.5) * 2;
 
 const GhostCanvas = ({ background }) => {
-  const [ghost, setGhost] = useState(Array.from({ length: 10 }, createGhost));
+  const [ghost, setGhost] = useState(Array.from({ length: 5 }, createGhost));
 
   function createGhost() {
     return {
