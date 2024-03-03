@@ -93,10 +93,6 @@ export const ContentWrapper = styled.section`
     font: 400 1.5rem/2.5rem "Poppins", sans-serif;
   }
 
-  @media only screen and (max-width: 768px) {
-    top: -32rem;
-  }
-
   @media only screen and (max-width: 375px) {
     h1 {
       font-size: 4rem;
