@@ -75,9 +75,8 @@ export const ContentWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   gap: 2rem;
-  top: -35rem;
 
   h1 {
     color: #ccc;
@@ -107,18 +106,18 @@ export const ContentWrapper = styled.section`
 export const ButtonWrapper = styled.div`
   position: relative;
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 0.1rem solid #ccc;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   transition: 0.5s;
-  letter-spacing: 1px;
-  border-radius: 8px;
+  letter-spacing: 0.1rem;
+  border-radius: 0.5rem;
 
   button {
     width: 9rem;
     height: 3rem;
     font: 900 1rem/2.5rem "Poppins", sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     background: #ccc;
     -webkit-mask: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png");
     mask: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png");
@@ -139,7 +138,7 @@ export const ButtonWrapper = styled.div`
   span {
     width: 100%;
     font: 900 1rem/3rem "Poppins", sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     position: absolute;
     color: #ccc;
     text-align: center;
