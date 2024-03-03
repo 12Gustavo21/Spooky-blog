@@ -14,7 +14,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 //Pages
-import Error from "../error500";
+import Error from "../error";
 
 //Components
 import Layout from "../../components/layout";
@@ -130,7 +130,15 @@ function Index() {
   const { data, loading, error } = useQuery(ABOUT_QUERY);
 
   if (loading) return <Loading />;
-  if (error) return <Error />;
+  if (error)
+    return (
+      <Error
+        error={500}
+        message={
+          "Sorry, something went wrong. <span>We are working on it.</span> Ok? :)"
+        }
+      />
+    );
 
   const { about } = data;
 

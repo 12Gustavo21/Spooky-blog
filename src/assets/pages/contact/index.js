@@ -6,7 +6,7 @@ import Loading from "../../components/loading";
 import Ghost from "../../components/ghost";
 
 //Pages
-import Error from "../error500";
+import Error from "../error";
 
 //EmailJs
 import emailjs from "@emailjs/browser";
@@ -76,7 +76,12 @@ export default function Index() {
   const { data, loading, error } = useQuery(CONTACT_QUERY);
 
   if (loading) return <Loading />;
-  if (error) return <Error />;
+  if (error)
+    return (
+      <Error
+        error={500}
+      />
+    );
 
   const { contact } = data;
 

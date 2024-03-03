@@ -9,7 +9,7 @@ import Header from "../../components/header";
 
 //Pages
 import Home from "../../pages/home";
-import Error from "../../pages/error404";
+import Error from "../../pages/error";
 import Projects from "../../pages/projects";
 import TechStack from "../../pages/techStack";
 import About from "../../pages/about";
@@ -23,7 +23,16 @@ export default function index() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="*" element={<Error />} />
+            <Route
+              path="*"
+              element={
+                <Error
+                  error={404}
+                  
+                  backToHome={true}
+                />
+              }
+            />
             <Route path="/projects" element={<Projects />} />
             <Route path="/techStack" element={<TechStack />} />
             <Route path="/about" element={<About />} />

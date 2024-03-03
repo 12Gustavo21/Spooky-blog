@@ -20,7 +20,7 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
 //Pages
-import Error from "../error500";
+import Error from "../error";
 
 //Components
 import Layout from "../../components/layout";
@@ -48,7 +48,12 @@ export default function Home() {
   const { data, loading, error } = useQuery(HOME_QUERY);
 
   if (loading) return <Loading />;
-  if (error) return <Error />;
+  if (error)
+    return (
+      <Error
+        error={500}
+      />
+    );
 
   console.log(data);
 
@@ -59,10 +64,7 @@ export default function Home() {
       <Helmet>
         <body className={SetBodyClass()} />
       </Helmet>
-      <Layout
-        positionFooter="absolute"
-        backgroundFooter="transparent"
-      >
+      <Layout positionFooter="absolute" backgroundFooter="transparent">
         <S.Main>
           <S.ContentWrapper data-aos="fade-up" data-aos-duration="2000">
             <h1

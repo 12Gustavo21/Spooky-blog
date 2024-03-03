@@ -3,7 +3,10 @@ import React, { useEffect } from "react";
 //Style
 import * as S from "./style";
 
-export default function Error() {
+//React router dom
+import { Link } from "react-router-dom";
+
+export default function Error({ error, backToHome }) {
   useEffect(() => {
     const main = document.querySelector("main");
     main.addEventListener("mousemove", function (e) {
@@ -19,9 +22,11 @@ export default function Error() {
   }, []);
 
   const renderEyes = () => {
+    const windowWidth = window.innerWidth;
+
     const numLayers = 5;
-    const numEyesPerLayer = 30;
-    const maxRadius = 500;
+    const numEyesPerLayer = windowWidth < 768 ? 20 : 30;
+    const maxRadius = windowWidth < 768 ? 400 : 500;
 
     const layerMultipliers = [6, 7, 3, 4, 5, 1, 3, 8, 7];
 
@@ -58,10 +63,26 @@ export default function Error() {
       <S.Main>
         <S.EyesWrapper>{renderEyes()}</S.EyesWrapper>
         <S.ContentWrapper>
-          <h1>ERRO 500</h1>
-          <p>
-            Sorry, something went wrong. <span>We are working on it.</span> Ok? :)
-          </p>
+          <h1>ERROR {error}</h1>
+          {error === 404 ? (
+            <p>
+              It seems like we couldn't find
+              <span> the page you were looking for</span>
+            </p>
+          ) : (
+            <p>
+              Sorry, something went wrong. <span>We are working on it.</span>
+              Ok? :)
+            </p>
+          )}
+          {backToHome ? (
+            <S.ButtonWrapper>
+              <Link to="/">
+                <span>Go back</span>
+                <button>Go back</button>
+              </Link>
+            </S.ButtonWrapper>
+          ) : null}
         </S.ContentWrapper>
       </S.Main>
     </>
