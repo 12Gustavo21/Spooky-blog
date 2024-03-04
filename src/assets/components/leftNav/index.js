@@ -1,12 +1,20 @@
 import React from "react";
-
-//Styles
+import { Link } from "react-router-dom";
 import * as S from "./style";
 
-//React Router Dom
-import { Link } from "react-router-dom";
+const LeftNav = ({ open, onClose }) => {
+  const handleLinkClick = () => {
+    onClose();
+  };
 
-const RightNav = ({ open }) => {
+  const links = document.querySelectorAll("a");
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      handleLinkClick();
+    });
+  });
+
   return (
     <S.List open={open}>
       <S.Item>
@@ -28,4 +36,4 @@ const RightNav = ({ open }) => {
   );
 };
 
-export default RightNav;
+export default LeftNav;

@@ -43,6 +43,10 @@ const StyledBurger = styled.section`
 const Burger = () => {
   const [open, setOpen] = useState(false);
 
+  const closeMenu = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
@@ -50,7 +54,7 @@ const Burger = () => {
         <section />
         <section />
       </StyledBurger>
-      <LeftNav open={open} />
+      <LeftNav open={open} onClose={closeMenu} />
     </>
   );
 };
