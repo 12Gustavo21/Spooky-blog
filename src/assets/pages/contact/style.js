@@ -213,9 +213,9 @@ export const GhostContainer = styled.div`
 `;
 
 export const Ghost = styled.div`
-  background: white;
+  background: #fff;
   position: relative;
-  color: white;
+  color: #fff;
 
   * {
     transition: all 0.3s;

@@ -33,7 +33,7 @@ export const Main = styled.main`
   align-items: center;
   background: #0f1927;
   position: fixed;
-  z-index: 2;
+  z-index: 999999;
 `;
 
 export const EyesWrapper = styled.div`

@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
     }
 
-    .home {
-        overflow: hidden;
+    body {
+        overflow-x: hidden;
     }
 `;

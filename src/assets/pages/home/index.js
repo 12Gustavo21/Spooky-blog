@@ -13,12 +13,6 @@ import * as S from "./style";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-//Helmet
-import { Helmet } from "react-helmet";
-
-//User Location
-import { useLocation } from "react-router-dom";
-
 //Pages
 import Error from "../error";
 
@@ -28,19 +22,6 @@ import Loading from "../../components/loading";
 import Forest from "../../components/forest";
 
 export default function Home() {
-  const SetBodyClass = () => {
-    const path = useLocation().pathname;
-    let location = "";
-
-    if (path === "/") {
-      location = "home";
-    } else {
-      location = path.slice(1);
-    }
-
-    return location;
-  };
-
   useEffect(() => {
     AOS.init();
   });
@@ -48,12 +29,7 @@ export default function Home() {
   const { data, loading, error } = useQuery(HOME_QUERY);
 
   if (loading) return <Loading />;
-  if (error)
-    return (
-      <Error
-        error={500}
-      />
-    );
+  if (error) return <Error error={500} />;
 
   console.log(data);
 
@@ -61,9 +37,6 @@ export default function Home() {
 
   return (
     <>
-      <Helmet>
-        <body className={SetBodyClass()} />
-      </Helmet>
       <Layout positionFooter="absolute" backgroundFooter="transparent">
         <S.Main>
           <S.ContentWrapper data-aos="fade-up" data-aos-duration="2000">
