@@ -18,7 +18,7 @@ import * as S from './style';
 import { MdMusicNote, MdMusicOff } from 'react-icons/md';
 
 //Main sound
-import ForestSong from '../../sounds/night-forest-soundscape.mp3';
+import ForestSong from '../../sounds/dramatic-soundscape.mp3';
 
 export default function Header() {
     const { isPlaying, toggleSound } = useAudio();
