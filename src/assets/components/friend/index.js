@@ -62,6 +62,9 @@ export default function Friend() {
         setTimeout(() => {
           setMessage("Put the music on, and enjoy!");
         }, 12000);
+        setTimeout(() => {
+          setClicked(false);
+        }, 14000);
       } else if (getLocation() === "about") {
         setMessage("This is the about page!");
         setTimeout(() => {
@@ -73,6 +76,9 @@ export default function Friend() {
         setTimeout(() => {
           setMessage("He loves to code!");
         }, 8000);
+        setTimeout(() => {
+          setClicked(false);
+        }, 10000);
       } else if (getLocation() === "techStack") {
         setMessage("This is the tech stack page!");
         setTimeout(() => {
@@ -84,6 +90,9 @@ export default function Friend() {
         setTimeout(() => {
           setMessage("He also loves to use styled-components!");
         }, 8000);
+        setTimeout(() => {
+          setClicked(false);
+        }, 10000);
       } else if (getLocation() === "projects") {
         setMessage("This is the projects page!");
         setTimeout(() => {
@@ -95,6 +104,9 @@ export default function Friend() {
         setTimeout(() => {
           setMessage("He is always learning new things!");
         }, 8000);
+        setTimeout(() => {
+          setClicked(false);
+        }, 10000);
       } else if (getLocation() === "contact") {
         setMessage("This is the contact page!");
         setTimeout(() => {
@@ -106,6 +118,9 @@ export default function Friend() {
         setTimeout(() => {
           setMessage("He is always open to new opportunities!");
         }, 8000);
+        setTimeout(() => {
+          setClicked(false);
+        }, 10000);
       }
     }
   };
