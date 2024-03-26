@@ -49,60 +49,63 @@ export default function Friend() {
         setMessage("Oh, hi there!");
         setTimeout(() => {
           setMessage("My name is Spoo!");
-        }, 2000);
-        setTimeout(() => {
-          setMessage("I'm here to help you!");
         }, 4000);
         setTimeout(() => {
-          setMessage("To navigate at home is easy!");
+          setMessage("I'm here to help you!");
         }, 6000);
         setTimeout(() => {
-          setMessage("For example, you can click on the links above!");
+          setMessage("To navigate at home is easy!");
         }, 8000);
+        setTimeout(() => {
+          setMessage("For example, you can click on the links above!");
+        }, 10000);
+        setTimeout(() => {
+          setMessage("Put the music on, and enjoy!");
+        }, 12000);
       } else if (getLocation() === "about") {
         setMessage("This is the about page!");
         setTimeout(() => {
           setMessage("Here you can find some information about Gustavo!");
-        }, 2000);
-        setTimeout(() => {
-          setMessage("He is a web developer!");
         }, 4000);
         setTimeout(() => {
-          setMessage("He loves to code!");
+          setMessage("He is a web developer!");
         }, 6000);
+        setTimeout(() => {
+          setMessage("He loves to code!");
+        }, 8000);
       } else if (getLocation() === "techStack") {
         setMessage("This is the tech stack page!");
         setTimeout(() => {
           setMessage("Here you can find the technologies that Gustavo uses!");
-        }, 2000);
-        setTimeout(() => {
-          setMessage("He loves to use React!");
         }, 4000);
         setTimeout(() => {
-          setMessage("He also loves to use styled-components!");
+          setMessage("He loves to use React!");
         }, 6000);
+        setTimeout(() => {
+          setMessage("He also loves to use styled-components!");
+        }, 8000);
       } else if (getLocation() === "projects") {
         setMessage("This is the projects page!");
         setTimeout(() => {
           setMessage("Here you can find some of Gustavo's projects!");
-        }, 2000);
-        setTimeout(() => {
-          setMessage("He loves to create new things!");
         }, 4000);
         setTimeout(() => {
-          setMessage("He is always learning new things!");
+          setMessage("He loves to create new things!");
         }, 6000);
+        setTimeout(() => {
+          setMessage("He is always learning new things!");
+        }, 8000);
       } else if (getLocation() === "contact") {
         setMessage("This is the contact page!");
         setTimeout(() => {
           setMessage("Here you can find a way to contact Gustavo!");
-        }, 2000);
-        setTimeout(() => {
-          setMessage("He loves to talk with new people!");
         }, 4000);
         setTimeout(() => {
-          setMessage("He is always open to new opportunities!");
+          setMessage("He loves to talk with new people!");
         }, 6000);
+        setTimeout(() => {
+          setMessage("He is always open to new opportunities!");
+        }, 8000);
       }
     }
   };
