@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //React router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -16,7 +16,18 @@ import About from "../../pages/about";
 import Contact from "../../pages/contact";
 import Frined from "../../components/friend";
 
-export default function index() {
+//Sound
+import ForestSong from "../../sounds/click-sound.mp3";
+
+export default function Index() {
+  const [sound] = useState(new Audio(ForestSong));
+  const handleClick = () => {
+    sound.play();
+    sound.volume = 0.5;
+  };
+
+  document.addEventListener("click", handleClick);
+
   return (
     <>
       <Router>
